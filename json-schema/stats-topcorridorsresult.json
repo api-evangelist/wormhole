@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/stats-topcorridorsresult",
+  "title": "stats.TopCorridorsResult",
+  "type": "object",
+  "properties": {
+    "corridors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/stats.TopCorridor"
+      }
+    }
+  }
+}

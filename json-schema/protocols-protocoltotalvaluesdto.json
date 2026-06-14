@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/protocols-protocoltotalvaluesdto",
+  "title": "protocols.ProtocolTotalValuesDTO",
+  "type": "object",
+  "properties": {
+    "error": {
+      "type": "string"
+    },
+    "period_diff_percentage": {
+      "type": "string"
+    },
+    "period_diff_volume_percentage": {
+      "type": "string"
+    },
+    "period_messages": {
+      "type": "integer"
+    },
+    "period_volume": {
+      "type": "number"
+    },
+    "protocol": {
+      "type": "string"
+    },
+    "total_messages": {
+      "type": "integer"
+    },
+    "total_value_locked": {
+      "type": "number"
+    },
+    "total_value_secured": {
+      "type": "number"
+    },
+    "total_value_transferred": {
+      "type": "number"
+    }
+  }
+}

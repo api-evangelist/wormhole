@@ -1,0 +1,52 @@
+{
+  "operationId": "find-delegate-observations-by-emitter",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/observations/delegate/:chain_id/:emitter_address",
+  "parameters": [
+    {
+      "name": "chain_id",
+      "in": "path",
+      "required": true,
+      "type": "integer"
+    },
+    {
+      "name": "emitter_address",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "page",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    {
+      "name": "pageSize",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    {
+      "name": "sortOrder",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/delegate_observations.DelegateObservationDoc"
+        }
+      }
+    }
+  }
+}

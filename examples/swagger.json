@@ -1,0 +1,26 @@
+{
+  "operationId": "swagger",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/swagger.json",
+  "parameters": [],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "object"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

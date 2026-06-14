@@ -1,0 +1,48 @@
+{
+  "operationId": "find-observations-by-emitter",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/observations/:chain/:emitter",
+  "parameters": [
+    {
+      "name": "page",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    {
+      "name": "pageSize",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    {
+      "name": "sortOrder",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/observations.ObservationDoc"
+        }
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

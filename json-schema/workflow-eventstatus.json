@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/workflow-eventstatus",
+  "title": "workflow.EventStatus",
+  "type": "string",
+  "enum": [
+    "PENDING",
+    "DONE"
+  ],
+  "x-enum-varnames": [
+    "EventStatusPending",
+    "EventStatusDone"
+  ]
+}

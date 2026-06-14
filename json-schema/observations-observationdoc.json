@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/observations-observationdoc",
+  "title": "observations.ObservationDoc",
+  "type": "object",
+  "properties": {
+    "emitterAddr": {
+      "type": "string"
+    },
+    "emitterChain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "guardianAddr": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "indexedAt": {
+      "type": "string"
+    },
+    "sequence": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "txHash": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "updatedAt": {
+      "type": "string"
+    }
+  }
+}

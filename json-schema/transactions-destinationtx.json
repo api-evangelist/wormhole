@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/transactions-destinationtx",
+  "title": "transactions.DestinationTx",
+  "type": "object",
+  "properties": {
+    "blockNumber": {
+      "type": "string"
+    },
+    "chainId": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "from": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "txHash": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    }
+  }
+}

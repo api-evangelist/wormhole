@@ -1,0 +1,39 @@
+{
+  "operationId": "live-tracking-subscribe",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/live-tracking/subscribe",
+  "parameters": [
+    {
+      "name": "vaaID",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "txHash",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/workflow.Event"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

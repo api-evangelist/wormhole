@@ -1,0 +1,26 @@
+{
+  "operationId": "guardian-set",
+  "summary": "",
+  "tags": [
+    "Guardian"
+  ],
+  "method": "GET",
+  "path": "/v1/guardianset/current",
+  "parameters": [],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/guardian.GuardianSetResponse"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "operationId": "guardians-is-vaa-enqueued",
+  "summary": "",
+  "tags": [
+    "Guardian"
+  ],
+  "method": "GET",
+  "path": "/v1/governor/is_vaa_enqueued/:chain_id/:emitter/:seq",
+  "parameters": [
+    {
+      "name": "chain_id",
+      "in": "path",
+      "required": true,
+      "type": "integer"
+    },
+    {
+      "name": "emitter",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "seq",
+      "in": "path",
+      "required": true,
+      "type": "integer"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/governor.EnqueuedVaaResponse"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

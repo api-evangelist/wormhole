@@ -1,0 +1,30 @@
+{
+  "operationId": "get-top-protocols-stats",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/protocols/stats",
+  "parameters": [],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/protocols.ProtocolTotalValuesDTO"
+        }
+      }
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/protocols.ProtocolTotalValuesDTO"
+        }
+      }
+    }
+  }
+}

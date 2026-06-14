@@ -1,0 +1,55 @@
+{
+  "operationId": "get-protocol-network-pairs",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/protocols/{protocolId}/top_network_pairs",
+  "parameters": [
+    {
+      "name": "protocolId",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "from",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "to",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/protocols.ProtocolNetworkPairResponse"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {
+        "$ref": "#/definitions/response.APIError"
+      }
+    },
+    "404": {
+      "description": "Not Found",
+      "schema": {
+        "$ref": "#/definitions/response.APIError"
+      }
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {
+        "$ref": "#/definitions/response.APIError"
+      }
+    }
+  }
+}

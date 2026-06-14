@@ -1,0 +1,22 @@
+{
+  "operationId": "get-scorecards",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/scorecards",
+  "parameters": [],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/transactions.ScorecardsResponse"
+      }
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

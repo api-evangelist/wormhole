@@ -1,0 +1,54 @@
+{
+  "@context": "https://wormhole.com/vocab/context.json",
+  "@type": "wormhole:APIEndpointCollection",
+  "@id": "https://api.wormholescan.io",
+  "name": "Wormholescan API Endpoints",
+  "description": "REST API endpoints for querying Wormhole VAAs, token transfers, guardian network, and cross-chain operations",
+  "endpoints": [
+    {
+      "@type": "wormhole:Endpoint",
+      "name": "Get VAAs by emitter",
+      "path": "/api/v1/vaas/:chain_id/:emitter",
+      "method": "GET",
+      "tags": [
+        "wormholescan"
+      ]
+    },
+    {
+      "@type": "wormhole:Endpoint",
+      "name": "Get Guardian Set",
+      "path": "/v1/guardianset/current",
+      "method": "GET",
+      "tags": [
+        "Guardian"
+      ]
+    },
+    {
+      "@type": "wormhole:Endpoint",
+      "name": "Get Operations",
+      "path": "/api/v1/operations",
+      "method": "GET",
+      "tags": [
+        "wormholescan"
+      ]
+    },
+    {
+      "@type": "wormhole:Endpoint",
+      "name": "Get Governor Config",
+      "path": "/api/v1/governor/config",
+      "method": "GET",
+      "tags": [
+        "wormholescan"
+      ]
+    },
+    {
+      "@type": "wormhole:Endpoint",
+      "name": "Get Token Transfers",
+      "path": "/api/v1/token-transfer/global/:chain_id/:emitter/:seq",
+      "method": "GET",
+      "tags": [
+        "wormholescan"
+      ]
+    }
+  ]
+}

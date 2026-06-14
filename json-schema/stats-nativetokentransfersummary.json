@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/stats-nativetokentransfersummary",
+  "title": "stats.NativeTokenTransferSummary",
+  "type": "object",
+  "properties": {
+    "circulatingSupply": {
+      "type": "number"
+    },
+    "fullyDilutedValuation": {
+      "type": "number"
+    },
+    "image": {
+      "$ref": "#/definitions/stats.image"
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "marketCap": {
+      "type": "number"
+    },
+    "platforms": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "price": {
+      "type": "number"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "totalSupply": {
+      "type": "number"
+    },
+    "totalTokenTransferred": {
+      "type": "number"
+    },
+    "totalValueTokenTransferred": {
+      "type": "number"
+    }
+  }
+}

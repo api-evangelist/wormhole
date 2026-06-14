@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/stats-token",
+  "title": "stats.Token",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "string"
+    },
+    "chain_id": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "circulating_supply": {
+      "type": "number"
+    },
+    "coingecko_id": {
+      "type": "string"
+    },
+    "fully_diluted_valuation": {
+      "type": "number"
+    },
+    "image": {
+      "type": "object",
+      "properties": {
+        "large": {
+          "type": "string"
+        },
+        "small": {
+          "type": "string"
+        },
+        "thumb": {
+          "type": "string"
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "market_cap": {
+      "type": "number"
+    },
+    "platforms": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "price": {
+      "type": "number"
+    },
+    "price_change_percentage_24h": {
+      "type": "number"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "total_supply": {
+      "type": "number"
+    },
+    "total_value_locked": {
+      "type": "number"
+    },
+    "total_value_transferred": {
+      "type": "number"
+    },
+    "volume_15d": {
+      "type": "number"
+    },
+    "volume_1y": {
+      "type": "number"
+    },
+    "volume_24h": {
+      "type": "number"
+    },
+    "volume_30d": {
+      "type": "number"
+    },
+    "volume_7d": {
+      "type": "number"
+    },
+    "volume_90d": {
+      "type": "number"
+    }
+  }
+}

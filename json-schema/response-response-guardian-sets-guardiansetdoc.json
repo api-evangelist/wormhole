@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/response-response-guardian-sets-guardiansetdoc",
+  "title": "response.Response-guardian_sets_GuardianSetDoc",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/guardian_sets.GuardianSetDoc"
+    },
+    "pagination": {
+      "$ref": "#/definitions/response.ResponsePagination"
+    }
+  }
+}

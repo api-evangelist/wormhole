@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/response-response-array-vaa-vaastats",
+  "title": "response.Response-array_vaa_VaaStats",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/vaa.VaaStats"
+      }
+    },
+    "pagination": {
+      "$ref": "#/definitions/response.ResponsePagination"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "operationId": "/api/v1/native-token-transfer/transfer-by-time",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/native-token-transfer/transfer-by-time",
+  "parameters": [
+    {
+      "name": "from",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "to",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "symbol",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "by",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "timeSpan",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/stats.NativeTokenTransferByTime"
+        }
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

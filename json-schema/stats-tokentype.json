@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/stats-tokentype",
+  "title": "stats.TokenType",
+  "type": "string",
+  "enum": [
+    "NATIVE_TOKEN_TRANSFER",
+    "PORTAL_TOKEN_BRIDGE"
+  ],
+  "x-enum-varnames": [
+    "NativeTokenTransfer",
+    "PortalTokenBridge"
+  ]
+}

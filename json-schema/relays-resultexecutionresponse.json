@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/relays-resultexecutionresponse",
+  "title": "relays.ResultExecutionResponse",
+  "type": "object",
+  "properties": {
+    "detail": {
+      "type": "string"
+    },
+    "gasUsed": {
+      "type": "string"
+    },
+    "refundStatus": {
+      "type": "string"
+    },
+    "revertString": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "transactionHash": {
+      "type": "string"
+    }
+  }
+}

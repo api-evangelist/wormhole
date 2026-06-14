@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/relays-instructionsresponse",
+  "title": "relays.InstructionsResponse",
+  "type": "object",
+  "properties": {
+    "encodedExecutionInfo": {
+      "type": "string"
+    },
+    "extraReceiverValue": {
+      "type": "object",
+      "properties": {
+        "_hex": {
+          "type": "string"
+        },
+        "_isBigNumber": {
+          "type": "boolean"
+        }
+      }
+    },
+    "refundAddress": {
+      "type": "string"
+    },
+    "refundChainId": {
+      "type": "integer"
+    },
+    "refundDeliveryProvider": {
+      "type": "string"
+    },
+    "requestedReceiverValue": {
+      "type": "object",
+      "properties": {
+        "_hex": {
+          "type": "string"
+        },
+        "_isBigNumber": {
+          "type": "boolean"
+        }
+      }
+    },
+    "senderAddress": {
+      "type": "string"
+    },
+    "sourceDeliveryProvider": {
+      "type": "string"
+    },
+    "targetAddress": {
+      "type": "string"
+    },
+    "targetChainId": {
+      "type": "integer"
+    },
+    "vaaKeys": {
+      "type": "array",
+      "items": {}
+    }
+  }
+}

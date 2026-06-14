@@ -1,0 +1,25 @@
+{
+  "operationId": "get-secured-tokens",
+  "summary": "",
+  "tags": [
+    "wormhole"
+  ],
+  "method": "GET",
+  "path": "/api/v1/wormhole/assets/secured-tokens",
+  "parameters": [],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/stats.TokenInfoDTO"
+        }
+      }
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

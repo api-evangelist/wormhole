@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/response-response-governor-govconfig",
+  "title": "response.Response-governor_GovConfig",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/governor.GovConfig"
+    },
+    "pagination": {
+      "$ref": "#/definitions/response.ResponsePagination"
+    }
+  }
+}

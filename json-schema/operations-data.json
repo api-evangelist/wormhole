@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/operations-data",
+  "title": "operations.Data",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "value": {
+      "type": "object",
+      "additionalProperties": {}
+    }
+  }
+}

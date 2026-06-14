@@ -1,0 +1,16 @@
+{
+  "operationId": "total-supply",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/supply/total",
+  "parameters": [],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {}
+    }
+  }
+}

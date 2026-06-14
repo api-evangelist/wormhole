@@ -1,0 +1,39 @@
+{
+  "operationId": "get-token-by-chain-and-address",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/token/:chain_id/:token_address",
+  "parameters": [
+    {
+      "name": "chain_id",
+      "in": "path",
+      "required": true,
+      "type": "integer"
+    },
+    {
+      "name": "token_address",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/transactions.Token"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "404": {
+      "description": "Not Found",
+      "schema": {}
+    }
+  }
+}

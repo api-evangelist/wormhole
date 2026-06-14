@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/guardian-sets-guardianaddress",
+  "title": "guardian_sets.GuardianAddress",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

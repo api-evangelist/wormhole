@@ -1,0 +1,36 @@
+{
+  "operationId": "search-operations",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "POST",
+  "path": "/api/v1/operations",
+  "parameters": [
+    {
+      "name": "txHashes",
+      "in": "body",
+      "required": true,
+      "type": "array"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/operations.OperationResponse"
+        }
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/stats-nativetokentransfertopholder",
+  "title": "stats.NativeTokenTransferTopHolder",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "string"
+    },
+    "chain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "volume": {
+      "type": "number"
+    }
+  }
+}

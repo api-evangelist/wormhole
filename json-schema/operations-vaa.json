@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/operations-vaa",
+  "title": "operations.Vaa",
+  "type": "object",
+  "properties": {
+    "guardianSetIndex": {
+      "type": "integer"
+    },
+    "isDuplicated": {
+      "type": "boolean"
+    },
+    "raw": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    }
+  }
+}

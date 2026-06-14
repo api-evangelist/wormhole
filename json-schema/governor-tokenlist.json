@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/governor-tokenlist",
+  "title": "governor.TokenList",
+  "type": "object",
+  "properties": {
+    "originAddress": {
+      "type": "string"
+    },
+    "originChainId": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "price": {
+      "type": "number"
+    }
+  }
+}

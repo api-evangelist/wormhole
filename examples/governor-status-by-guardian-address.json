@@ -1,0 +1,39 @@
+{
+  "operationId": "governor-status-by-guardian-address",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/governor/status/:guardian_address",
+  "parameters": [
+    {
+      "name": "page",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    {
+      "name": "pageSize",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/response.Response-governor_GovStatus"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

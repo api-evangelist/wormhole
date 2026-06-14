@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/guardian-guardiansetresponse",
+  "title": "guardian.GuardianSetResponse",
+  "type": "object",
+  "properties": {
+    "guardianSet": {
+      "$ref": "#/definitions/github_com_wormhole-foundation_wormhole-explorer_api_routes_guardian_guardian.GuardianSet"
+    }
+  }
+}

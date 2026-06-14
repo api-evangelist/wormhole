@@ -1,0 +1,30 @@
+{
+  "operationId": "parse-vaa",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "POST",
+  "path": "/api/v1/vaas/parse",
+  "parameters": [],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/parser.ParseVaaWithStandarizedPropertiesdResponse"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "404": {
+      "description": "Not Found",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

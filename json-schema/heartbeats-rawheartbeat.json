@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/heartbeats-rawheartbeat",
+  "title": "heartbeats.RawHeartbeat",
+  "type": "object",
+  "properties": {
+    "bootTimestamp": {
+      "type": "string"
+    },
+    "counter": {
+      "type": "string"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "guardianAddr": {
+      "type": "string"
+    },
+    "networks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/heartbeats.HeartbeatNetworkResponse"
+      }
+    },
+    "nodeName": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

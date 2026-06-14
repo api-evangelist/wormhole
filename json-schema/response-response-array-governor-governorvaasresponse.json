@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/response-response-array-governor-governorvaasresponse",
+  "title": "response.Response-array_governor_GovernorVaasResponse",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/governor.GovernorVaasResponse"
+      }
+    },
+    "pagination": {
+      "$ref": "#/definitions/response.ResponsePagination"
+    }
+  }
+}

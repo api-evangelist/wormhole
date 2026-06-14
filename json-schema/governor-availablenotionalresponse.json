@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/governor-availablenotionalresponse",
+  "title": "governor.AvailableNotionalResponse",
+  "type": "object",
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/governor.AvailableNotionalItemResponse"
+      }
+    }
+  }
+}

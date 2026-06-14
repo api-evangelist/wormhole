@@ -1,0 +1,29 @@
+{
+  "operationId": "guardians-token-list",
+  "summary": "",
+  "tags": [
+    "Guardian"
+  ],
+  "method": "GET",
+  "path": "/v1/governor/token_list",
+  "parameters": [],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/governor.TokenList"
+        }
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

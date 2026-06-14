@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/operations-sourcechain",
+  "title": "operations.SourceChain",
+  "type": "object",
+  "properties": {
+    "attribute": {
+      "$ref": "#/definitions/operations.Data"
+    },
+    "balanceChanges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/github_com_wormhole-foundation_wormhole-explorer_api_routes_wormscan_operations.BalanceChanges"
+      }
+    },
+    "chainId": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "fee": {
+      "type": "string"
+    },
+    "feeUSD": {
+      "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "gasTokenNotional": {
+      "type": "string"
+    },
+    "isSolanaShim": {
+      "description": "Indicates whether the VAA was emitted through a SVM Shim program",
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "transaction": {
+      "$ref": "#/definitions/operations.Transaction"
+    }
+  }
+}

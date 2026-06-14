@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/governor-govconfigftokens",
+  "title": "governor.GovConfigfTokens",
+  "type": "object",
+  "properties": {
+    "originAddress": {
+      "type": "string"
+    },
+    "originChainId": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "number"
+    }
+  }
+}

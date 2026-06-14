@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/vaa-vaastats",
+  "title": "vaa.VaaStats",
+  "type": "object",
+  "properties": {
+    "chainId": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "count": {
+      "type": "integer"
+    }
+  }
+}

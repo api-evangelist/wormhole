@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/transactions-assetwithvolume",
+  "title": "transactions.AssetWithVolume",
+  "type": "object",
+  "properties": {
+    "emitterChain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "tokenAddress": {
+      "type": "string"
+    },
+    "tokenChain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "volume": {
+      "type": "string"
+    }
+  }
+}

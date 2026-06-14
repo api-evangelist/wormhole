@@ -1,0 +1,49 @@
+{
+  "operationId": "find-address-by-id",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/address/:address",
+  "parameters": [
+    {
+      "name": "address",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "page",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    {
+      "name": "pageSize",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/response.Response-address_AddressOverview"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "404": {
+      "description": "Not Found",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

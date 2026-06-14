@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/transactions-topchainpairsresponse",
+  "title": "transactions.TopChainPairsResponse",
+  "type": "object",
+  "properties": {
+    "chainPairs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/transactions.ChainPair"
+      }
+    }
+  }
+}

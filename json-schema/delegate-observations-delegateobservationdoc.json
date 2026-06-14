@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/delegate-observations-delegateobservationdoc",
+  "title": "delegate_observations.DelegateObservationDoc",
+  "type": "object",
+  "properties": {
+    "consistencyLevel": {
+      "type": "integer"
+    },
+    "delegatedGuardianAddr": {
+      "description": "json name is not a typo, requested by foundation",
+      "type": "string"
+    },
+    "emitterAddr": {
+      "type": "string"
+    },
+    "emitterChain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "hash": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "indexedAt": {
+      "type": "string"
+    },
+    "isReobservation": {
+      "type": "boolean"
+    },
+    "nonce": {
+      "type": "integer"
+    },
+    "payload": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "sentTimestamp": {
+      "type": "string"
+    },
+    "sequence": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "txHash": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "unreliable": {
+      "type": "boolean"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "verificationState": {
+      "type": "integer"
+    }
+  }
+}

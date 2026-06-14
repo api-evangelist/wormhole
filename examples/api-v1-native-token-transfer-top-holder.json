@@ -1,0 +1,40 @@
+{
+  "operationId": "/api/v1/native-token-transfer/top-holder",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/native-token-transfer/top-holder",
+  "parameters": [
+    {
+      "name": "coingecko_id",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/stats.NativeTokenTransferTopHolder"
+        }
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "404": {
+      "description": "Not Found",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

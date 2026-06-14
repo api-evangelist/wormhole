@@ -1,0 +1,66 @@
+{
+  "operationId": "x-chain-activity-tops",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/x-chain-activity/tops",
+  "parameters": [
+    {
+      "name": "timespan",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "from",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "to",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "appId",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "sourceChain",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "targetChain",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/transactions.ChainActivityTopResult"
+        }
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

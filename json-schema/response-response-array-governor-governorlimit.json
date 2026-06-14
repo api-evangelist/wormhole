@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/response-response-array-governor-governorlimit",
+  "title": "response.Response-array_governor_GovernorLimit",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/governor.GovernorLimit"
+      }
+    },
+    "pagination": {
+      "$ref": "#/definitions/response.ResponsePagination"
+    }
+  }
+}

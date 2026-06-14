@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/workflow-event",
+  "title": "workflow.Event",
+  "type": "object",
+  "properties": {
+    "data": {},
+    "error": {
+      "type": "string"
+    },
+    "event": {
+      "$ref": "#/definitions/workflow.EventType"
+    },
+    "status": {
+      "$ref": "#/definitions/workflow.EventStatus"
+    },
+    "step": {
+      "type": "integer"
+    },
+    "subscriptionId": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "totalSteps": {
+      "type": "integer"
+    }
+  }
+}

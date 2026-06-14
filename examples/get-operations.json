@@ -1,0 +1,108 @@
+{
+  "operationId": "get-operations",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/operations",
+  "parameters": [
+    {
+      "name": "address",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "txHash",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "page",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    {
+      "name": "pageSize",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    {
+      "name": "sourceChain",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "targetChain",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "includesChain",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "appId",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "exclusiveAppId",
+      "in": "query",
+      "required": false,
+      "type": "boolean"
+    },
+    {
+      "name": "minAmount",
+      "in": "query",
+      "required": false,
+      "type": "number"
+    },
+    {
+      "name": "addressType",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "from",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "to",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/operations.OperationResponse"
+        }
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/transactions-transactiondetail",
+  "title": "transactions.TransactionDetail",
+  "type": "object",
+  "properties": {
+    "emitterAddress": {
+      "description": "EmitterAddress contains the VAA's emitter address, encoded in hex.",
+      "type": "string"
+    },
+    "emitterChain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "emitterNativeAddress": {
+      "description": "EmitterNativeAddress contains the VAA's emitter address, encoded in the emitter chain's native format.",
+      "type": "string"
+    },
+    "globalTx": {
+      "$ref": "#/definitions/transactions.GlobalTransactionDoc"
+    },
+    "id": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "standardizedProperties": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "tokenAmount": {
+      "type": "string"
+    },
+    "txHash": {
+      "type": "string"
+    },
+    "usdAmount": {
+      "type": "string"
+    }
+  }
+}

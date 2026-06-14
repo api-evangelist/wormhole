@@ -1,0 +1,51 @@
+{
+  "operationId": "find-vaa-by-id",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/vaas/:chain_id/:emitter/:seq",
+  "parameters": [
+    {
+      "name": "chain_id",
+      "in": "path",
+      "required": true,
+      "type": "integer"
+    },
+    {
+      "name": "emitter",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "seq",
+      "in": "path",
+      "required": true,
+      "type": "integer"
+    },
+    {
+      "name": "parsedPayload",
+      "in": "query",
+      "required": false,
+      "type": "boolean"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/response.Response-array_vaa_VaaDoc"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

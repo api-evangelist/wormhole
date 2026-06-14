@@ -1,0 +1,29 @@
+{
+  "operationId": "get-top-chain-pairs-by-num-transfers",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/top-chain-pairs-by-num-transfers",
+  "parameters": [
+    {
+      "name": "timeSpan",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/transactions.TopChainPairsResponse"
+      }
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

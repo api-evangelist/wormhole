@@ -1,0 +1,33 @@
+{
+  "operationId": "/api/v1/native-token-transfer/summary",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/native-token-transfer/summary",
+  "parameters": [
+    {
+      "name": "coingecko_id",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/stats.NativeTokenTransferSummary"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

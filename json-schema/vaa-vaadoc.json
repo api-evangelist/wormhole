@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/vaa-vaadoc",
+  "title": "vaa.VaaDoc",
+  "type": "object",
+  "properties": {
+    "digest": {
+      "type": "string"
+    },
+    "emitterAddr": {
+      "type": "string"
+    },
+    "emitterChain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "emitterNativeAddr": {
+      "type": "string"
+    },
+    "guardianSetIndex": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "string"
+    },
+    "indexedAt": {
+      "type": "string"
+    },
+    "isDuplicated": {
+      "type": "boolean"
+    },
+    "isSolanaShim": {
+      "description": "Payload is an extension field - it is not present in the guardian API.\nIndicates whether the VAA was emitted through a SVM Shim program",
+      "type": "boolean"
+    },
+    "payload": {
+      "description": "Payload is an extension field - it is not present in the guardian API.",
+      "type": "object",
+      "additionalProperties": true
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "txHash": {
+      "description": "TxHash is an extension field - it is not present in the guardian API.",
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "vaa": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "version": {
+      "type": "integer"
+    }
+  }
+}

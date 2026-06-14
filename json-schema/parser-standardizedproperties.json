@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/parser-standardizedproperties",
+  "title": "parser.StandardizedProperties",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "string"
+    },
+    "appIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fee": {
+      "type": "string"
+    },
+    "feeAddress": {
+      "type": "string"
+    },
+    "feeChain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "fromAddress": {
+      "type": "string"
+    },
+    "fromChain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "normalizedDecimals": {
+      "type": "integer"
+    },
+    "toAddress": {
+      "type": "string"
+    },
+    "toChain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "tokenAddress": {
+      "type": "string"
+    },
+    "tokenChain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    }
+  }
+}

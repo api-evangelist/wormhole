@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/heartbeats-heartbeatnetworkresponse",
+  "title": "heartbeats.HeartbeatNetworkResponse",
+  "type": "object",
+  "properties": {
+    "contractAddress": {
+      "type": "string"
+    },
+    "errorCount": {
+      "type": "string"
+    },
+    "height": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    }
+  }
+}

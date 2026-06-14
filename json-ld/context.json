@@ -1,0 +1,102 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "wormhole": "https://wormhole.com/vocab#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "VAA": "wormhole:VAA",
+    "vaa": "wormhole:vaa",
+    "vaaId": {
+      "@id": "wormhole:vaaId",
+      "@type": "xsd:string"
+    },
+    "emitterChain": {
+      "@id": "wormhole:emitterChain",
+      "@type": "xsd:integer"
+    },
+    "emitterAddress": {
+      "@id": "wormhole:emitterAddress",
+      "@type": "xsd:string"
+    },
+    "sequence": {
+      "@id": "wormhole:sequence",
+      "@type": "xsd:string"
+    },
+    "guardianSetIndex": {
+      "@id": "wormhole:guardianSetIndex",
+      "@type": "xsd:integer"
+    },
+    "signatures": {
+      "@id": "wormhole:signatures",
+      "@container": "@list"
+    },
+    "tokenTransfer": "wormhole:tokenTransfer",
+    "nativeTokenTransfer": "wormhole:nativeTokenTransfer",
+    "sourceChain": {
+      "@id": "wormhole:sourceChain",
+      "@type": "xsd:integer"
+    },
+    "targetChain": {
+      "@id": "wormhole:targetChain",
+      "@type": "xsd:integer"
+    },
+    "tokenAmount": {
+      "@id": "wormhole:tokenAmount",
+      "@type": "xsd:string"
+    },
+    "tokenAddress": {
+      "@id": "wormhole:tokenAddress",
+      "@type": "xsd:string"
+    },
+    "fromAddress": {
+      "@id": "wormhole:fromAddress",
+      "@type": "xsd:string"
+    },
+    "toAddress": {
+      "@id": "wormhole:toAddress",
+      "@type": "xsd:string"
+    },
+    "Guardian": "wormhole:Guardian",
+    "GuardianSet": "wormhole:GuardianSet",
+    "guardianAddress": {
+      "@id": "wormhole:guardianAddress",
+      "@type": "xsd:string"
+    },
+    "guardianName": {
+      "@id": "wormhole:guardianName",
+      "@type": "xsd:string"
+    },
+    "txHash": {
+      "@id": "wormhole:txHash",
+      "@type": "xsd:string"
+    },
+    "blockTime": {
+      "@id": "wormhole:blockTime",
+      "@type": "xsd:dateTime"
+    },
+    "status": {
+      "@id": "wormhole:status",
+      "@type": "xsd:string"
+    },
+    "notionalLimit": {
+      "@id": "wormhole:notionalLimit",
+      "@type": "xsd:string"
+    },
+    "bigTransactionSize": {
+      "@id": "wormhole:bigTransactionSize",
+      "@type": "xsd:string"
+    },
+    "enqueuedVAAs": {
+      "@id": "wormhole:enqueuedVAAs",
+      "@container": "@list"
+    },
+    "id": "@id",
+    "type": "@type",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    }
+  }
+}

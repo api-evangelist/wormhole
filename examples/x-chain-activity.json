@@ -1,0 +1,45 @@
+{
+  "operationId": "x-chain-activity",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/x-chain-activity",
+  "parameters": [
+    {
+      "name": "timeSpan",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "by",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "apps",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/transactions.ChainActivity"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

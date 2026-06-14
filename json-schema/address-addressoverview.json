@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/address-addressoverview",
+  "title": "address.AddressOverview",
+  "type": "object",
+  "properties": {
+    "vaas": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/vaa.VaaDoc"
+      }
+    }
+  }
+}

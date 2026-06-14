@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/operations-operationresponse",
+  "title": "operations.OperationResponse",
+  "type": "object",
+  "properties": {
+    "content": {
+      "$ref": "#/definitions/operations.Content"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "emitterAddress": {
+      "$ref": "#/definitions/operations.EmitterAddress"
+    },
+    "emitterChain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "id": {
+      "type": "string"
+    },
+    "sequence": {
+      "type": "string"
+    },
+    "sourceChain": {
+      "$ref": "#/definitions/operations.SourceChain"
+    },
+    "targetChain": {
+      "$ref": "#/definitions/operations.TargetChain"
+    },
+    "vaa": {
+      "$ref": "#/definitions/operations.Vaa"
+    }
+  }
+}

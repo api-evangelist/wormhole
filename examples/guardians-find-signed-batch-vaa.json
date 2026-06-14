@@ -1,0 +1,53 @@
+{
+  "operationId": "guardians-find-signed-batch-vaa",
+  "summary": "",
+  "tags": [
+    "Guardian"
+  ],
+  "method": "GET",
+  "path": "/v1/signed_batch_vaa/:chain_id/:emitter/sequence/:seq",
+  "parameters": [
+    {
+      "name": "chain_id",
+      "in": "path",
+      "required": true,
+      "type": "integer"
+    },
+    {
+      "name": "emitter",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "seq",
+      "in": "path",
+      "required": true,
+      "type": "integer"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "vaaBytes": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

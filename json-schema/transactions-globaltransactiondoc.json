@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/transactions-globaltransactiondoc",
+  "title": "transactions.GlobalTransactionDoc",
+  "type": "object",
+  "properties": {
+    "destinationTx": {
+      "$ref": "#/definitions/transactions.DestinationTx"
+    },
+    "id": {
+      "type": "string"
+    },
+    "originTx": {
+      "$ref": "#/definitions/transactions.OriginTx"
+    }
+  }
+}

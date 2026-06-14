@@ -1,0 +1,26 @@
+{
+  "operationId": "governor-available-notional-by-chain",
+  "summary": "",
+  "tags": [
+    "Guardian"
+  ],
+  "method": "GET",
+  "path": "/v1/governor/available_notional_by_chain",
+  "parameters": [],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/governor.AvailableNotionalResponse"
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

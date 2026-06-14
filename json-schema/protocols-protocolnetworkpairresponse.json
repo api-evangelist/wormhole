@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/protocols-protocolnetworkpairresponse",
+  "title": "protocols.ProtocolNetworkPairResponse",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/protocols.ProtocolNetworkPairResult"
+    },
+    "protocol": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "operationId": "get-last-transactions",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/last-txs",
+  "parameters": [
+    {
+      "name": "timeSpan",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "sampleRate",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/transactions.TransactionCountResult"
+        }
+      }
+    },
+    "400": {
+      "description": "Bad Request",
+      "schema": {}
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

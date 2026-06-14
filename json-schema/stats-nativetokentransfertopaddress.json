@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/stats-nativetokentransfertopaddress",
+  "title": "stats.NativeTokenTransferTopAddress",
+  "type": "object",
+  "properties": {
+    "fromAddress": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
+    }
+  }
+}

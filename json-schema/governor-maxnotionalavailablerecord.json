@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/governor-maxnotionalavailablerecord",
+  "title": "governor.MaxNotionalAvailableRecord",
+  "type": "object",
+  "properties": {
+    "availableNotional": {
+      "type": "integer"
+    },
+    "chainId": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "emitters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/governor.Emitter"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "nodeName": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    }
+  }
+}

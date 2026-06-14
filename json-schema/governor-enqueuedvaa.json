@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/governor-enqueuedvaa",
+  "title": "governor.EnqueuedVaa",
+  "type": "object",
+  "properties": {
+    "chainId": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "emitterAddress": {
+      "type": "string"
+    },
+    "notionalValue": {
+      "type": "integer"
+    },
+    "sequence": {
+      "type": "string"
+    },
+    "txHash": {
+      "type": "string"
+    }
+  }
+}

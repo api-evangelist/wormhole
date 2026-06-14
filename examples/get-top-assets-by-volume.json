@@ -1,0 +1,29 @@
+{
+  "operationId": "get-top-assets-by-volume",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/top-assets-by-volume",
+  "parameters": [
+    {
+      "name": "timeSpan",
+      "in": "query",
+      "required": true,
+      "type": "string"
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {
+        "$ref": "#/definitions/transactions.TopAssetsResponse"
+      }
+    },
+    "500": {
+      "description": "Internal Server Error",
+      "schema": {}
+    }
+  }
+}

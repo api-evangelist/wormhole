@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/supply-supplyinforesponse",
+  "title": "supply.SupplyInfoResponse",
+  "type": "object",
+  "properties": {
+    "circulating_supply": {
+      "type": "string"
+    },
+    "total_supply": {
+      "type": "string"
+    }
+  }
+}

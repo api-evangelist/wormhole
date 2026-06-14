@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/workflow-eventtype",
+  "title": "workflow.EventType",
+  "type": "string",
+  "enum": [
+    "SOURCE_TX",
+    "GOVERNOR",
+    "SIGNED_VAA",
+    "VAA_REDEEMED",
+    "END_OF_WORKFLOW",
+    "ERROR",
+    "SEARCHING"
+  ],
+  "x-enum-varnames": [
+    "EventTypeSourceTx",
+    "EventTypeGovernor",
+    "EventTypeSignedVaa",
+    "EventTypeVaaRedeemed",
+    "EventTypeEOW",
+    "EventTypeError",
+    "EventTypeSearching"
+  ]
+}

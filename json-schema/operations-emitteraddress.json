@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/operations-emitteraddress",
+  "title": "operations.EmitterAddress",
+  "type": "object",
+  "properties": {
+    "hex": {
+      "type": "string"
+    },
+    "native": {
+      "type": "string"
+    }
+  }
+}

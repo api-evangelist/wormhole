@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/stats-topsymbolresult",
+  "title": "stats.TopSymbolResult",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string"
+    },
+    "tokens": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/stats.TokenResult"
+      }
+    },
+    "txs": {
+      "type": "number"
+    },
+    "volume": {
+      "type": "number"
+    }
+  }
+}

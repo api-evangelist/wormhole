@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/transactions-transactioncountresult",
+  "title": "transactions.TransactionCountResult",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "integer"
+    },
+    "time": {
+      "type": "string"
+    }
+  }
+}

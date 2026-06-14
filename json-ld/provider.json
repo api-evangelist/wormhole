@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "wormhole": "https://wormhole.com/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@type": "schema:WebAPI",
+  "@id": "https://wormhole.com/",
+  "schema:name": "Wormhole",
+  "schema:description": "Decentralized cross-chain messaging and interoperability protocol connecting 45+ blockchain networks.",
+  "schema:url": "https://wormhole.com/",
+  "schema:documentation": "https://wormhole.com/docs/",
+  "schema:termsOfService": "https://wormhole.com/terms",
+  "schema:apiDocumentation": "https://api.wormholescan.io/swagger.json",
+  "schema:provider": {
+    "@type": "schema:Organization",
+    "@id": "https://wormhole.com/",
+    "schema:name": "Wormhole Foundation",
+    "schema:url": "https://wormhole.com/",
+    "schema:sameAs": [
+      "https://github.com/wormhole-foundation",
+      "https://twitter.com/wormhole"
+    ]
+  },
+  "wormhole:supportedChains": 45,
+  "wormhole:apiNamespaces": [
+    "wormholescan",
+    "guardian"
+  ],
+  "wormhole:apiBaseUrl": "https://api.wormholescan.io",
+  "wormhole:authentication": "none-required",
+  "wormhole:testnetApiBaseUrl": "https://api.testnet.wormholescan.io/api/v1"
+}

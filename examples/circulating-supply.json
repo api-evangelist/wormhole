@@ -1,0 +1,16 @@
+{
+  "operationId": "circulating-supply",
+  "summary": "",
+  "tags": [
+    "wormholescan"
+  ],
+  "method": "GET",
+  "path": "/api/v1/supply/circulating",
+  "parameters": [],
+  "responses": {
+    "200": {
+      "description": "OK",
+      "schema": {}
+    }
+  }
+}

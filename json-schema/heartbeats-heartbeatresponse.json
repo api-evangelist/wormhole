@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/heartbeats-heartbeatresponse",
+  "title": "heartbeats.HeartbeatResponse",
+  "type": "object",
+  "properties": {
+    "p2pNodeAddr": {
+      "type": "string"
+    },
+    "rawHeartbeat": {
+      "$ref": "#/definitions/heartbeats.RawHeartbeat"
+    },
+    "verifiedGuardianAddr": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/transactions-scorecardsresponse",
+  "title": "transactions.ScorecardsResponse",
+  "type": "object",
+  "properties": {
+    "1y_messages": {
+      "description": "Number of VAAs emitted in the last 1 year (includes Pyth messages).",
+      "type": "string"
+    },
+    "1y_volume": {
+      "description": "Volume transferred through the token bridge in the last 1 year, in USD.",
+      "type": "string"
+    },
+    "24h_messages": {
+      "description": "Number of VAAs emitted in the last 24 hours (includes Pyth messages).",
+      "type": "string"
+    },
+    "24h_volume": {
+      "description": "Volume transferred through the token bridge in the last 24 hours, in USD.",
+      "type": "string"
+    },
+    "30d_messages": {
+      "description": "Number of VAAs emitted in the last 30 days (includes Pyth messages).",
+      "type": "string"
+    },
+    "30d_volume": {
+      "description": "Volume transferred through the token bridge in the last 30 days, in USD.",
+      "type": "string"
+    },
+    "7d_messages": {
+      "description": "Number of VAAs emitted in the last 7 days (includes Pyth messages).",
+      "type": "string"
+    },
+    "7d_volume": {
+      "description": "Volume transferred through the token bridge in the last 7 days, in USD.",
+      "type": "string"
+    },
+    "90d_messages": {
+      "description": "Number of VAAs emitted in the last 90 days (includes Pyth messages).",
+      "type": "string"
+    },
+    "90d_volume": {
+      "description": "Volume transferred through the token bridge in the last 90 days, in USD.",
+      "type": "string"
+    },
+    "total_messages": {
+      "description": "Number of VAAs emitted since the creation of the network (includes Pyth messages).",
+      "type": "string"
+    },
+    "total_tx_count": {
+      "description": "Number of VAAs emitted since the creation of the network (does not include Pyth messages)",
+      "type": "string"
+    },
+    "total_volume": {
+      "type": "string"
+    },
+    "tvl": {
+      "description": "Total value locked in USD.",
+      "type": "string"
+    }
+  }
+}

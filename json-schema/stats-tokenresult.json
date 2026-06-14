@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/stats-tokenresult",
+  "title": "stats.TokenResult",
+  "type": "object",
+  "properties": {
+    "emitter_chain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "token_address": {
+      "type": "string"
+    },
+    "token_chain": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "txs": {
+      "type": "number"
+    },
+    "volume": {
+      "type": "number"
+    }
+  }
+}

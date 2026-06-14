@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/protocols-protocoltrendingtokensresponse",
+  "title": "protocols.ProtocolTrendingTokensResponse",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/protocols.ProtocolTrendingTokensResult"
+    },
+    "protocol": {
+      "type": "string"
+    }
+  }
+}

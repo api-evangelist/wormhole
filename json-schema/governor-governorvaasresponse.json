@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.wormholescan.io/schemas/governor-governorvaasresponse",
+  "title": "governor.GovernorVaasResponse",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "integer"
+    },
+    "chainId": {
+      "$ref": "#/definitions/vaa.ChainID"
+    },
+    "emitterAddress": {
+      "type": "string"
+    },
+    "releaseTime": {
+      "type": "string"
+    },
+    "sequence": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "txHash": {
+      "type": "string"
+    },
+    "vaaId": {
+      "type": "string"
+    }
+  }
+}
