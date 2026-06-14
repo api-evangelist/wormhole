@@ -1,0 +1,175 @@
+name: Wormhole
+description: >
+  Wormhole is a decentralized cross-chain messaging and interoperability
+  protocol connecting 45+ blockchain networks. It provides REST APIs for
+  querying VAA (Verifiable Action Approval) status, native and wrapped
+  token transfers, cross-chain operations, and Guardian Network data via
+  the Wormholescan API. Developers can build multichain applications with
+  the TypeScript SDK, CLI tooling, and the Connect bridging widget.
+image: https://wormhole.com/logo.png
+tags:
+  - Cross-Chain
+  - Blockchain
+  - Interoperability
+  - DeFi
+  - Token Transfers
+  - Messaging
+  - Web3
+url: https://wormhole.com/
+baseURL: https://api.wormholescan.io
+apis:
+  - name: Wormholescan API
+    description: >
+      Public REST API for the Wormhole explorer and Guardian Network. Provides
+      two namespaces: wormholescan (explorer and new endpoints) and guardian.
+      Enables querying VAA status, token transfer operations, native token
+      transfer metadata, cross-chain operations, and Guardian Network details.
+      No authentication required; some endpoints are rate limited.
+    humanURL: https://wormhole.com/docs/products/messaging/guides/wormholescan-api/
+    baseURL: https://api.wormholescan.io/api/v1
+    tags:
+      - VAA
+      - Token Transfers
+      - Guardian Network
+      - Cross-Chain Operations
+    properties:
+      - type: documentation
+        url: https://wormhole.com/docs/products/messaging/guides/wormholescan-api/
+      - type: openapi
+        url: https://docs.wormholescan.io/
+      - type: swagger-ui
+        url: https://wormholescan.io/#/developers/api-doc
+    contact:
+      - FN: Wormhole Developer Support
+        url: https://wormhole.com/contact
+    meta:
+      - key: version
+        value: "1"
+      - key: authentication
+        value: none-required
+
+  - name: Wormholescan Testnet API
+    description: >
+      Testnet version of the Wormholescan REST API for development and testing
+      against Wormhole-supported test networks. Mirrors the mainnet API surface
+      for VAAs, operations, and token transfers in a non-production environment.
+    humanURL: https://wormhole.com/docs/products/messaging/guides/wormholescan-api/
+    baseURL: https://api.testnet.wormholescan.io/api/v1
+    tags:
+      - Testnet
+      - VAA
+      - Token Transfers
+      - Development
+    properties:
+      - type: documentation
+        url: https://wormhole.com/docs/products/messaging/guides/wormholescan-api/
+    contact:
+      - FN: Wormhole Developer Support
+        url: https://wormhole.com/contact
+    meta:
+      - key: environment
+        value: testnet
+
+  - name: Wormhole TypeScript SDK
+    description: >
+      Unified TypeScript SDK for building cross-chain applications on Wormhole.
+      Supports Native Token Transfers, Wrapped Token Transfers, CCTP, Settlement,
+      and core messaging/VAA handling across EVM chains, Solana, Algorand,
+      Aptos, CosmWasm, and Sui.
+    humanURL: https://wormhole.com/docs/tools/typescript-sdk/get-started/
+    baseURL: https://npmjs.com/package/@wormhole-foundation/sdk
+    tags:
+      - SDK
+      - TypeScript
+      - Cross-Chain
+      - Token Transfers
+    properties:
+      - type: documentation
+        url: https://wormhole.com/docs/tools/typescript-sdk/get-started/
+      - type: github
+        url: https://github.com/wormhole-foundation/wormhole-sdk-ts
+      - type: npm
+        url: https://www.npmjs.com/package/@wormhole-foundation/sdk
+    contact:
+      - FN: Wormhole Foundation
+        url: https://github.com/wormhole-foundation
+    meta:
+      - key: npm-package
+        value: "@wormhole-foundation/sdk"
+
+  - name: Wormhole Connect Widget
+    description: >
+      Embeddable React widget that provides a full cross-chain token transfer
+      UI powered by Wormhole. Supports 45+ chains and integrates Native Token
+      Transfers, Wrapped Token Transfers, CCTP, and Settlement routing.
+    humanURL: https://wormhole.com/docs/products/connect/get-started/
+    baseURL: https://npmjs.com/package/@wormhole-foundation/wormhole-connect
+    tags:
+      - Widget
+      - React
+      - UI
+      - Token Bridge
+    properties:
+      - type: documentation
+        url: https://wormhole.com/docs/products/connect/get-started/
+      - type: npm
+        url: https://www.npmjs.com/package/@wormhole-foundation/wormhole-connect
+    contact:
+      - FN: Wormhole Foundation
+        url: https://github.com/wormhole-foundation
+    meta:
+      - key: npm-package
+        value: "@wormhole-foundation/wormhole-connect"
+
+  - name: Wormhole CLI
+    description: >
+      Command-line interface for interacting with Wormhole protocol operations
+      including token transfers, NTT deployments, and cross-chain messaging tasks.
+    humanURL: https://wormhole.com/docs/tools/cli/get-started/
+    baseURL: https://npmjs.com/package/@wormhole-foundation/cli
+    tags:
+      - CLI
+      - Developer Tools
+      - Token Transfers
+      - NTT
+    properties:
+      - type: documentation
+        url: https://wormhole.com/docs/tools/cli/get-started/
+    contact:
+      - FN: Wormhole Foundation
+        url: https://github.com/wormhole-foundation
+    meta:
+      - key: tool-type
+        value: cli
+
+common:
+  - type: portal
+    url: https://wormhole.com/docs/
+  - type: github
+    url: https://github.com/wormhole-foundation
+  - type: explorer
+    url: https://wormholescan.io/
+  - type: blog
+    url: https://wormhole.com/blog/
+  - type: contact
+    url: https://wormhole.com/contact
+  - type: community
+    url: https://wormhole.com/community/hub
+  - type: forum
+    url: https://forum.wormhole.com/
+  - type: security
+    url: https://immunefi.com/bug-bounty/wormhole/
+  - type: status
+    url: https://wormholescan.io/
+  - type: twitter
+    url: https://twitter.com/wormhole
+  - type: discord
+    url: https://discord.gg/wormholecrypto
+  - type: terms-of-service
+    url: https://wormhole.com/terms
+  - type: privacy-policy
+    url: https://wormhole.com/privacy
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+specificationVersion: "0.19"

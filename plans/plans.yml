@@ -1,0 +1,35 @@
+plans:
+  - name: Open Source / Public Access
+    description: >
+      The Wormholescan REST API is freely accessible with no authentication
+      required. Developers can query VAA status, token transfer operations,
+      native token transfer metadata, and Guardian Network data at no cost.
+      Some endpoints are rate limited to ensure fair use across the ecosystem.
+    type: free
+    url: https://wormhole.com/docs/products/messaging/guides/wormholescan-api/
+    features:
+      - VAA status queries
+      - Token transfer operations
+      - Native token transfer metadata
+      - Guardian Network data
+      - Wormholescan Explorer access
+      - Testnet API access
+      - TypeScript SDK usage
+      - CLI tooling
+      - Connect widget embedding
+
+  - name: Institutions
+    description: >
+      Wormhole for Institutions is a customized, high-touch product offering
+      for global enterprises and financial institutions requiring advanced
+      interoperability infrastructure, dedicated support, and enterprise-grade
+      SLAs for cross-chain operations at scale.
+    type: enterprise
+    url: https://wormhole.com/institutions
+    contact: https://wormhole.com/contact
+    features:
+      - Dedicated support
+      - Enterprise SLAs
+      - Custom cross-chain configurations
+      - Institutional-grade infrastructure
+      - Advanced interoperability features

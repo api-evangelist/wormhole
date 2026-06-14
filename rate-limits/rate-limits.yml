@@ -1,0 +1,22 @@
+rateLimits:
+  - name: Wormholescan API Rate Limiting
+    description: >
+      The Wormholescan public REST API does not require authentication and
+      is generally open for developer use. Some endpoints are documented as
+      rate limited, though specific numeric thresholds (requests per second
+      or per minute) are not publicly disclosed in the official documentation.
+      Rate limiting is applied per IP address to ensure fair use across all
+      consumers of the public API.
+    url: https://wormhole.com/docs/products/messaging/guides/wormholescan-api/
+    scope: per-ip
+    enforcement: some-endpoints
+    authentication-required: false
+    notes: >
+      Specific rate limit numbers are not published. Developers experiencing
+      throttling should consider caching responses or contacting Wormhole
+      via wormhole.com/contact for higher-volume access arrangements.
+    tiers:
+      - name: Public
+        limit: unspecified
+        window: unspecified
+        endpoints: selective

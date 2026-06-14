@@ -1,0 +1,37 @@
+finops:
+  - name: Wormhole API Cost Profile
+    description: >
+      The Wormholescan REST API is provided free of charge with no subscription
+      fees or usage-based pricing. Wormhole is an open-source, decentralized
+      protocol operated by the Wormhole Foundation. Developer tooling including
+      the TypeScript SDK, CLI, and Connect widget are all open-source and
+      freely available.
+    url: https://wormhole.com/docs/
+    model: free-open-source
+    authentication-cost: none
+    api-access-cost: none
+
+  - name: Protocol Transaction Fees
+    description: >
+      While the Wormholescan API itself is free, on-chain cross-chain transfers
+      via the Wormhole protocol incur transaction fees paid in the native gas
+      tokens of the source and destination chains. Relayer fees may apply when
+      using automated delivery services. The W token powers the Wormhole
+      protocol ecosystem and governance.
+    url: https://wormhole.com/docs/protocol/infrastructure/relayers/relayer/
+    model: gas-fees
+    currency: native-gas-tokens
+    notes: >
+      Relay provider fees for automated message delivery are determined
+      off-chain by individual relay providers and quoted via their Quoter
+      services. No fixed fee schedule is publicly published.
+
+  - name: Institutions and Enterprise
+    description: >
+      Enterprise pricing for Wormhole institutional products is available
+      on a custom, negotiated basis. Organizations requiring dedicated
+      support, custom SLAs, or high-volume infrastructure should contact
+      Wormhole directly.
+    url: https://wormhole.com/institutions
+    model: custom-enterprise
+    contact: https://wormhole.com/contact
