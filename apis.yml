@@ -33,9 +33,9 @@ apis:
       - Guardian Network
       - Cross-Chain Operations
     properties:
-      - type: documentation
+      - type: Documentation
         url: https://wormhole.com/docs/products/messaging/guides/wormholescan-api/
-      - type: openapi
+      - type: OpenAPI
         url: https://docs.wormholescan.io/
       - type: swagger-ui
         url: https://wormholescan.io/#/developers/api-doc
@@ -61,7 +61,7 @@ apis:
       - Token Transfers
       - Development
     properties:
-      - type: documentation
+      - type: Documentation
         url: https://wormhole.com/docs/products/messaging/guides/wormholescan-api/
     contact:
       - FN: Wormhole Developer Support
@@ -84,7 +84,7 @@ apis:
       - Cross-Chain
       - Token Transfers
     properties:
-      - type: documentation
+      - type: Documentation
         url: https://wormhole.com/docs/tools/typescript-sdk/get-started/
       - type: github
         url: https://github.com/wormhole-foundation/wormhole-sdk-ts
@@ -110,7 +110,7 @@ apis:
       - UI
       - Token Bridge
     properties:
-      - type: documentation
+      - type: Documentation
         url: https://wormhole.com/docs/products/connect/get-started/
       - type: npm
         url: https://www.npmjs.com/package/@wormhole-foundation/wormhole-connect
@@ -133,7 +133,7 @@ apis:
       - Token Transfers
       - NTT
     properties:
-      - type: documentation
+      - type: Documentation
         url: https://wormhole.com/docs/tools/cli/get-started/
     contact:
       - FN: Wormhole Foundation
@@ -143,31 +143,31 @@ apis:
         value: cli
 
 common:
-  - type: portal
+  - type: Portal
     url: https://wormhole.com/docs/
   - type: github
     url: https://github.com/wormhole-foundation
   - type: explorer
     url: https://wormholescan.io/
-  - type: blog
+  - type: Blog
     url: https://wormhole.com/blog/
-  - type: contact
+  - type: Contact
     url: https://wormhole.com/contact
-  - type: community
+  - type: Community
     url: https://wormhole.com/community/hub
-  - type: forum
+  - type: Forums
     url: https://forum.wormhole.com/
-  - type: security
+  - type: Security
     url: https://immunefi.com/bug-bounty/wormhole/
   - type: status
     url: https://wormholescan.io/
-  - type: twitter
+  - type: Twitter
     url: https://twitter.com/wormhole
-  - type: discord
+  - type: Discord
     url: https://discord.gg/wormholecrypto
-  - type: terms-of-service
+  - type: TermsOfService
     url: https://wormhole.com/terms
-  - type: privacy-policy
+  - type: PrivacyPolicy
     url: https://wormhole.com/privacy
 maintainers:
   - FN: Kin Lane
