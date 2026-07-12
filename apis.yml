@@ -143,6 +143,8 @@ apis:
         value: cli
 
 common:
+  - type: DomainSecurity
+    url: security/wormhole-domain-security.yml
   - type: Portal
     url: https://wormhole.com/docs/
   - type: github
