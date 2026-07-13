@@ -2,13 +2,14 @@
   "repo": "wormhole",
   "feeds": [
     {
-      "source": "https://wormhole.com/blog/",
-      "feed_url": "",
+      "source": "https://wormholescan.io/",
+      "feed_url": "https://wormholescan.io/",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape"
+      "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-27T13:22:00Z",
-  "agent_pulled": "2026-06-27"
+  "fetched": "2026-07-11T11:50:51Z",
+  "agent_pulled": "2026-07-04"
 }
