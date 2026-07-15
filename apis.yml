@@ -143,6 +143,8 @@ apis:
         value: cli
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/wormhole-agentic-access.yml
   - type: DomainSecurity
     url: security/wormhole-domain-security.yml
   - type: Portal
