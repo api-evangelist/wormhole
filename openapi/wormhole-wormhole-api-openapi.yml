@@ -1,0 +1,99 @@
+swagger: '2.0'
+info:
+  description: 'Wormhole Guardian API
+
+    This is the API for the Wormhole Guardian and Explorer.
+
+    The API has two namespaces: wormholescan and guardian.
+
+    wormholescan is the namespace for the explorer and the new endpoints. The prefix is /api/v1.
+
+    guardian is the legacy namespace backguard compatible with guardian node API. The prefix is /v1.
+
+    This API is public and does not require authentication although some endpoints are rate limited.
+
+    Check each endpoint documentation for more information.'
+  title: Wormholescan Guardian wormhole API
+  termsOfService: https://wormhole.com/
+  contact:
+    name: API Support
+    url: https://discord.com/invite/wormholecrypto
+    email: info@wormhole.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: '1.0'
+host: api.wormholescan.io
+basePath: /
+schemes:
+- https
+tags:
+- name: wormhole
+paths:
+  /api/v1/wormhole/assets/secured-tokens:
+    get:
+      description: Returns a list of tokens secured by Wormhole, including Native Token Transfers and Portal Bridge tokens
+      produces:
+      - application/json
+      tags:
+      - wormhole
+      operationId: get-secured-tokens
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/stats.TokenInfoDTO'
+        '500':
+          description: Internal Server Error
+definitions:
+  stats.TokenInfoDTO:
+    type: object
+    properties:
+      circulating_supply:
+        type: number
+      coingecko_id:
+        type: string
+      fully_diluted_valuation:
+        type: number
+      image:
+        type: string
+      market_cap:
+        type: number
+      platforms:
+        type: object
+        additionalProperties:
+          type: string
+      price:
+        type: number
+      symbol:
+        type: string
+      total_supply:
+        type: number
+      total_value_locked:
+        type: number
+      total_value_transferred:
+        type: number
+      type:
+        $ref: '#/definitions/stats.TokenType'
+      volume_15d:
+        type: number
+      volume_1y:
+        type: number
+      volume_24h:
+        type: number
+      volume_30d:
+        type: number
+      volume_7d:
+        type: number
+      volume_90d:
+        type: number
+  stats.TokenType:
+    type: string
+    enum:
+    - NATIVE_TOKEN_TRANSFER
+    - PORTAL_TOKEN_BRIDGE
+    x-enum-varnames:
+    - NativeTokenTransfer
+    - PortalTokenBridge
