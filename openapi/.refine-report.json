@@ -1,0 +1,18 @@
+{
+  "provider": "wormhole",
+  "sources": [
+    "wormhole-guardian-api-openapi.yml",
+    "wormhole-wormhole-api-openapi.yml",
+    "wormhole-wormholescan-api-openapi.yml"
+  ],
+  "outputs": [
+    "wormhole-guardian-api-openapi.yml",
+    "wormhole-wormhole-api-openapi.yml",
+    "wormhole-wormholescan-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
