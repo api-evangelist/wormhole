@@ -1,0 +1,143 @@
+{
+  "item": [
+    {
+      "id": "b9e8b8cb-3f48-483b-a5ab-8c25979e6963",
+      "name": "wormhole",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2c4604f7-b2c9-430e-bef2-3b1b734e3d3c",
+          "name": "get-secured-tokens",
+          "request": {
+            "name": "get-secured-tokens",
+            "description": {
+              "content": "Returns a list of tokens secured by Wormhole, including Native Token Transfers and Portal Bridge tokens",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "wormhole",
+                "assets",
+                "secured-tokens"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f9fefb5f-f6e3-4de6-8003-e5a72b069af9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "wormhole",
+                    "assets",
+                    "secured-tokens"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"circulating_supply\": 8797.041552284847,\n    \"coingecko_id\": \"string\",\n    \"fully_diluted_valuation\": 2424.3004836767755,\n    \"image\": \"string\",\n    \"market_cap\": 1014.7187348640074,\n    \"platforms\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"price\": 9537.761304891303,\n    \"symbol\": \"string\",\n    \"total_supply\": 2264.959287443891,\n    \"total_value_locked\": 1554.8114816384218,\n    \"total_value_transferred\": 6067.806666297832,\n    \"type\": \"NATIVE_TOKEN_TRANSFER\",\n    \"volume_15d\": 1027.5473829077098,\n    \"volume_1y\": 1652.0958080791038,\n    \"volume_24h\": 1687.385084322951,\n    \"volume_30d\": 2090.2949671079787,\n    \"volume_7d\": 1702.6779235932897,\n    \"volume_90d\": 1973.8138262703453\n  },\n  {\n    \"circulating_supply\": 2929.367087599083,\n    \"coingecko_id\": \"string\",\n    \"fully_diluted_valuation\": 6787.487114832027,\n    \"image\": \"string\",\n    \"market_cap\": 1016.9239388593021,\n    \"platforms\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"price\": 3522.5314699086816,\n    \"symbol\": \"string\",\n    \"total_supply\": 6522.705808255715,\n    \"total_value_locked\": 8398.829257390915,\n    \"total_value_transferred\": 7550.222193701127,\n    \"type\": \"PORTAL_TOKEN_BRIDGE\",\n    \"volume_15d\": 7052.98590330888,\n    \"volume_1y\": 5191.363592709002,\n    \"volume_24h\": 5201.293189856558,\n    \"volume_30d\": 1428.2002247149173,\n    \"volume_7d\": 6416.296773161618,\n    \"volume_90d\": 9505.793627456407\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e78f558-a493-4ae7-aa98-ec838e0260f4",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "wormhole",
+                    "assets",
+                    "secured-tokens"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.wormholescan.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d2011926-f07a-4b0a-aaad-178274b26bc9",
+    "name": "Wormholescan Guardian wormhole API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Wormhole Guardian API\nThis is the API for the Wormhole Guardian and Explorer.\nThe API has two namespaces: wormholescan and guardian.\nwormholescan is the namespace for the explorer and the new endpoints. The prefix is /api/v1.\nguardian is the legacy namespace backguard compatible with guardian node API. The prefix is /v1.\nThis API is public and does not require authentication although some endpoints are rate limited.\nCheck each endpoint documentation for more information.\n\nContact Support:\n Name: API Support\n Email: info@wormhole.com",
+      "type": "text/plain"
+    }
+  }
+}

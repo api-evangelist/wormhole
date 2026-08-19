@@ -1,0 +1,1755 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guardian wormholescan API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "wormholescan",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "find-address-by-id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/address/:address",
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "path",
+                "description": "address"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number. Starts at 0."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              }
+            ]
+          },
+          "docs": "Lookup an address"
+        },
+        {
+          "info": {
+            "name": "application-activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/application-activity",
+            "params": [
+              {
+                "name": "timespan",
+                "value": "",
+                "type": "query",
+                "description": "Time span, supported values: 1d, 1mo and 1y"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "From date, supported format 2006-01-02T15:04:05Z07:00"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "To date, supported format 2006-01-02T15:04:05Z07:00"
+              },
+              {
+                "name": "appIds",
+                "value": "",
+                "type": "query",
+                "description": "Search by appId"
+              }
+            ]
+          },
+          "docs": "Search for a specific period of time the number of transactions and the volume per application."
+        },
+        {
+          "info": {
+            "name": "find-global-transaction-by-id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/global-tx/:chain_id/:emitter/:seq",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "id of the blockchain"
+              },
+              {
+                "name": "emitter",
+                "value": "",
+                "type": "path",
+                "description": "address of the emitter"
+              },
+              {
+                "name": "seq",
+                "value": "",
+                "type": "path",
+                "description": "sequence of the VAA"
+              }
+            ]
+          },
+          "docs": "Find a global transaction by VAA ID\nGlobal transactions is a logical association of two transactions that are related to each other by a unique VAA ID.\nThe first transaction is created on the origin chain when the VAA is emitted.\nThe second transaction is created on the destination chain when the VAA is redeemed.\nIf the response only contains an origin tx the VAA was not redeemed."
+        },
+        {
+          "info": {
+            "name": "governor-config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/config",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              }
+            ]
+          },
+          "docs": "Returns governor configuration for all guardians."
+        },
+        {
+          "info": {
+            "name": "governor-config-by-guardian-address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/config/:guardian_address"
+          },
+          "docs": "Returns governor configuration for a given guardian."
+        },
+        {
+          "info": {
+            "name": "governor-enqueued-vaas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/enqueued_vaas/",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              }
+            ]
+          },
+          "docs": "Returns enqueued VAAs for each blockchain."
+        },
+        {
+          "info": {
+            "name": "guardians-enqueued-vaas-by-chain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/enqueued_vaas/:chain",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              }
+            ]
+          },
+          "docs": "Returns all enqueued VAAs for a given blockchain."
+        },
+        {
+          "info": {
+            "name": "governor-notional-limit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/limit",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              }
+            ]
+          },
+          "docs": "Returns the governor limit for all blockchains."
+        },
+        {
+          "info": {
+            "name": "governor-notional-available",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/notional/available",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              }
+            ]
+          },
+          "docs": "Returns the amount of notional value available for each blockchain."
+        },
+        {
+          "info": {
+            "name": "governor-notional-available-by-chain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/notional/available/:chain",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              }
+            ]
+          },
+          "docs": "Returns the amount of notional value available for a given blockchain."
+        },
+        {
+          "info": {
+            "name": "governor-notional-limit-detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/notional/limit",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              }
+            ]
+          },
+          "docs": "Returns the detailed notional limit for all blockchains."
+        },
+        {
+          "info": {
+            "name": "governor-notional-limit-detail-by-chain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/notional/limit/:chain",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              }
+            ]
+          },
+          "docs": "Returns the detailed notional limit available for a given blockchain."
+        },
+        {
+          "info": {
+            "name": "governor-max-notional-available-by-chain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/notional/max_available/:chain"
+          },
+          "docs": "Returns the maximum amount of notional value available for a given blockchain."
+        },
+        {
+          "info": {
+            "name": "governor-status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/status",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              }
+            ]
+          },
+          "docs": "Returns the governor status for all guardians."
+        },
+        {
+          "info": {
+            "name": "governor-status-by-guardian-address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/status/:guardian_address",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              }
+            ]
+          },
+          "docs": "Returns the governor status for a given guardian."
+        },
+        {
+          "info": {
+            "name": "governor-vaas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/governor/vaas"
+          },
+          "docs": "Returns all vaas in Governor."
+        },
+        {
+          "info": {
+            "name": "get-guardian-set",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/guardian_sets/:version",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "Guardian set version (uint32) or the literal \\"
+              }
+            ]
+          },
+          "docs": "Returns a guardian set by version, or the current one when \"current\" is supplied."
+        },
+        {
+          "info": {
+            "name": "health-check",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/health"
+          },
+          "docs": "Health check"
+        },
+        {
+          "info": {
+            "name": "get-last-transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/last-txs",
+            "params": [
+              {
+                "name": "timeSpan",
+                "value": "",
+                "type": "query",
+                "description": "Time Span, default: 1d, supported values: [1d, 1w, 1mo]. 1mo ​​is 30 days."
+              },
+              {
+                "name": "sampleRate",
+                "value": "",
+                "type": "query",
+                "description": "Sample Rate, default: 1h, supported values: [1h, 1d]. Valid configurations with timeSpan: 1d/1h, 1w/1d, 1mo/1d"
+              }
+            ]
+          },
+          "docs": "Returns the number of transactions by a defined time span and sample rate."
+        },
+        {
+          "info": {
+            "name": "live-tracking-subscribe",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/live-tracking/subscribe",
+            "params": [
+              {
+                "name": "vaaID",
+                "value": "",
+                "type": "query",
+                "description": "VAA ID to track"
+              },
+              {
+                "name": "txHash",
+                "value": "",
+                "type": "query",
+                "description": "Transaction hash to track"
+              }
+            ]
+          },
+          "docs": "Subscribe to live tracking events for a VAA or transaction"
+        },
+        {
+          "info": {
+            "name": "/api/v1/native-token-transfer/activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/native-token-transfer/activity",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Symbol of the native-token-transfer token."
+              },
+              {
+                "name": "by",
+                "value": "",
+                "type": "query",
+                "description": "Renders the results using notional or tx count (default is notional)."
+              }
+            ]
+          },
+          "docs": "Returns a list of values (tx count or notional) of the Native Token Transfer for a emitter and destination chains."
+        },
+        {
+          "info": {
+            "name": "/api/v1/native-token-transfer/summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/native-token-transfer/summary",
+            "params": [
+              {
+                "name": "coingecko_id",
+                "value": "",
+                "type": "query",
+                "description": "coingecko_id of the desired token."
+              }
+            ]
+          },
+          "docs": "Returns a summary of the Native Token Transfer."
+        },
+        {
+          "info": {
+            "name": "/api/v1/native-token-transfer/token-list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/native-token-transfer/token-list",
+            "params": [
+              {
+                "name": "withLinks",
+                "value": "",
+                "type": "query",
+                "description": "Specify true/false if the response includes links."
+              }
+            ]
+          },
+          "docs": "Returns the list of supported Native Token Transfer tokens."
+        },
+        {
+          "info": {
+            "name": "/api/v1/native-token-transfer/top-address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/native-token-transfer/top-address",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Symbol of the native-token-transfer token."
+              },
+              {
+                "name": "by",
+                "value": "",
+                "type": "query",
+                "description": "Renders the results using notional or tx count (default is notional)."
+              }
+            ]
+          },
+          "docs": "Returns a list of values (tx count or notional) of the Native Token Transfer for address."
+        },
+        {
+          "info": {
+            "name": "/api/v1/native-token-transfer/top-holder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/native-token-transfer/top-holder",
+            "params": [
+              {
+                "name": "coingecko_id",
+                "value": "",
+                "type": "query",
+                "description": "Coingecko_id of the native-token-transfer token."
+              }
+            ]
+          },
+          "docs": "Returns a list of volume and chain of the Native Token Transfer for top holders."
+        },
+        {
+          "info": {
+            "name": "/api/v1/native-token-transfer/transfer-by-time",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/native-token-transfer/transfer-by-time",
+            "params": [
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "From date, supported format 2006-01-02T15:04:05Z07:00"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "To date, supported format 2006-01-02T15:04:05Z07:00"
+              },
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Symbol of the native-token-transfer token."
+              },
+              {
+                "name": "by",
+                "value": "",
+                "type": "query",
+                "description": "Renders the results using notional or tx count (default is notional)."
+              },
+              {
+                "name": "timeSpan",
+                "value": "",
+                "type": "query",
+                "description": "Time Span, supported values: [1h, 1d, 1mo, 1y]."
+              }
+            ]
+          },
+          "docs": "Returns a list of values (tx count or notional) of the Native Token Transfer for a emitter and destination chains."
+        },
+        {
+          "info": {
+            "name": "find-observations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/observations",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "txHash",
+                "value": "",
+                "type": "query",
+                "description": "Transaction hash of the Observations"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              }
+            ]
+          },
+          "docs": "Returns all observations, sorted in descending timestamp order."
+        },
+        {
+          "info": {
+            "name": "find-observations-by-chain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/observations/:chain",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              }
+            ]
+          },
+          "docs": "Returns all observations for a given blockchain, sorted in descending timestamp order."
+        },
+        {
+          "info": {
+            "name": "find-observations-by-emitter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/observations/:chain/:emitter",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              }
+            ]
+          },
+          "docs": "Returns all observations for a specific emitter address, sorted in descending timestamp order."
+        },
+        {
+          "info": {
+            "name": "find-observations-by-sequence",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/observations/:chain/:emitter/:sequence",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              }
+            ]
+          },
+          "docs": "Find observations identified by emitter chain, emitter address and sequence."
+        },
+        {
+          "info": {
+            "name": "find-observations-by-id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/observations/:chain/:emitter/:sequence/:signer/:hash",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              }
+            ]
+          },
+          "docs": "Find a specific observation."
+        },
+        {
+          "info": {
+            "name": "find-delegate-observations-by-chain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/observations/delegate/:chain_id",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "Chain ID"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "ASC or DESC"
+              }
+            ]
+          },
+          "docs": "Returns delegate observations for a given chain, sorted in descending timestamp order."
+        },
+        {
+          "info": {
+            "name": "find-delegate-observations-by-emitter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/observations/delegate/:chain_id/:emitter_address",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "Chain ID"
+              },
+              {
+                "name": "emitter_address",
+                "value": "",
+                "type": "path",
+                "description": "Emitter address"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "ASC or DESC"
+              }
+            ]
+          },
+          "docs": "Returns delegate observations for a given chain and emitter, sorted in descending timestamp order."
+        },
+        {
+          "info": {
+            "name": "find-delegate-observations-by-sequence",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/observations/delegate/:chain_id/:emitter_address/:sequence",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "Chain ID"
+              },
+              {
+                "name": "emitter_address",
+                "value": "",
+                "type": "path",
+                "description": "Emitter address"
+              },
+              {
+                "name": "sequence",
+                "value": "",
+                "type": "path",
+                "description": "Sequence"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "ASC or DESC"
+              }
+            ]
+          },
+          "docs": "Returns delegate observations for a given chain, emitter and sequence."
+        },
+        {
+          "info": {
+            "name": "find-delegate-observations-by-guardian",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/observations/delegate/:chain_id/:emitter_address/:sequence/:guardian_address",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "Chain ID"
+              },
+              {
+                "name": "emitter_address",
+                "value": "",
+                "type": "path",
+                "description": "Emitter address"
+              },
+              {
+                "name": "sequence",
+                "value": "",
+                "type": "path",
+                "description": "Sequence"
+              },
+              {
+                "name": "guardian_address",
+                "value": "",
+                "type": "path",
+                "description": "Delegate guardian address"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "ASC or DESC"
+              }
+            ]
+          },
+          "docs": "Returns delegate observations for a given chain, emitter, sequence and delegate guardian address."
+        },
+        {
+          "info": {
+            "name": "get-operations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/operations",
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "query",
+                "description": "address of the emitter"
+              },
+              {
+                "name": "txHash",
+                "value": "",
+                "type": "query",
+                "description": "hash of the transaction"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page number"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "pageSize"
+              },
+              {
+                "name": "sourceChain",
+                "value": "",
+                "type": "query",
+                "description": "source chains of the operation, separated by comma"
+              },
+              {
+                "name": "targetChain",
+                "value": "",
+                "type": "query",
+                "description": "target chains of the operation, separated by comma"
+              },
+              {
+                "name": "includesChain",
+                "value": "",
+                "type": "query",
+                "description": "chains to match either source or target, separated by comma"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "query",
+                "description": "appID of the operation"
+              },
+              {
+                "name": "exclusiveAppId",
+                "value": "",
+                "type": "query",
+                "description": "single appId of the operation"
+              },
+              {
+                "name": "minAmount",
+                "value": "",
+                "type": "query",
+                "description": "more than an amount in USD for address search"
+              },
+              {
+                "name": "addressType",
+                "value": "",
+                "type": "query",
+                "description": "indicates the type of address for address search"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "beginning of period"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "end of period"
+              }
+            ]
+          },
+          "docs": "Find all operations."
+        },
+        {
+          "info": {
+            "name": "search-operations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/operations"
+          },
+          "docs": "Find operations by filters. Currently only txHash is supported."
+        },
+        {
+          "info": {
+            "name": "get-operation-by-id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/operations/:chain_id/:emitter/:seq",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "id of the blockchain"
+              },
+              {
+                "name": "emitter",
+                "value": "",
+                "type": "path",
+                "description": "address of the emitter"
+              },
+              {
+                "name": "seq",
+                "value": "",
+                "type": "path",
+                "description": "sequence of the VAA"
+              }
+            ]
+          },
+          "docs": "Find operations by ID (chainID/emitter/sequence)."
+        },
+        {
+          "info": {
+            "name": "get-top-protocols-stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/protocols/stats"
+          },
+          "docs": "Returns the representative stats for the top protocols"
+        },
+        {
+          "info": {
+            "name": "get-protocol-network-pairs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/protocols/:protocolId/top_network_pairs",
+            "params": [
+              {
+                "name": "protocolId",
+                "value": "",
+                "type": "path",
+                "description": "Protocol ID (e.g., PORTAL_TOKEN_BRIDGE, CCTP_WORMHOLE_INTEGRATION)"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "Start date in RFC3339 format (e.g., 2024-01-01T00:00:00Z)"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "End date in RFC3339 format (e.g., 2024-01-08T00:00:00Z)"
+              }
+            ]
+          },
+          "docs": "Returns the most used network pairs (chains) for a given protocol ranked by USD volume transferred\nThe endpoint automatically selects hourly or daily aggregation based on the time range\nFor ranges < 24 hours within the last 30 days, hourly data is used\nOtherwise, daily data is used"
+        },
+        {
+          "info": {
+            "name": "get-protocol-trending-tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/protocols/:protocolId/trending_tokens",
+            "params": [
+              {
+                "name": "protocolId",
+                "value": "",
+                "type": "path",
+                "description": "Protocol ID (e.g., PORTAL_TOKEN_BRIDGE, CCTP_WORMHOLE_INTEGRATION, CONNECT)"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "Start date in RFC3339 format (e.g., 2024-01-01T00:00:00Z)"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "End date in RFC3339 format (e.g., 2024-01-08T00:00:00Z)"
+              }
+            ]
+          },
+          "docs": "Returns the top 100 trending tokens for a given protocol ranked by USD volume transferred\nThe endpoint automatically selects hourly or daily aggregation based on the time range\nFor ranges < 24 hours, hourly data is used and 'from' must be within last 24 hours\nOtherwise, daily data is used"
+        },
+        {
+          "info": {
+            "name": "ready-check",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/ready"
+          },
+          "docs": "Ready check"
+        },
+        {
+          "info": {
+            "name": "find-relay-by-vaa-id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/relays/:chain/:emitter/:sequence"
+          },
+          "docs": "Get a specific relay information by chainID, emitter address and sequence."
+        },
+        {
+          "info": {
+            "name": "get-scorecards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/scorecards"
+          },
+          "docs": "Returns a list of KPIs for Wormhole.\nTVL is total value locked by token bridge contracts in USD.\nVolume is the all-time total volume transferred through the token bridge in USD.\n24h volume is the volume transferred through the token bridge in the last 24 hours, in USD.\nTotal Tx count is the number of transaction bridging assets since the creation of the network (does not include Pyth or other messages).\n24h tx count is the number of transaction bridging assets in the last 24 hours (does not incl"
+        },
+        {
+          "info": {
+            "name": "supply-info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/supply"
+          },
+          "docs": "Get W token supply data (circulation and total supply)."
+        },
+        {
+          "info": {
+            "name": "circulating-supply",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/supply/circulating"
+          },
+          "docs": "Get W token circulation supply."
+        },
+        {
+          "info": {
+            "name": "total-supply",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/supply/total"
+          },
+          "docs": "Get W token total supply."
+        },
+        {
+          "info": {
+            "name": "get-token-by-chain-and-address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/token/:chain_id/:token_address",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "id of the blockchain"
+              },
+              {
+                "name": "token_address",
+                "value": "",
+                "type": "path",
+                "description": "token address"
+              }
+            ]
+          },
+          "docs": "Returns a token symbol, coingecko id and address by chain and token address."
+        },
+        {
+          "info": {
+            "name": "/api/v1/top-100-corridors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/top-100-corridors",
+            "params": [
+              {
+                "name": "timeSpan",
+                "value": "",
+                "type": "query",
+                "description": "Time span, supported values: 2d and 7d (default is 2d)."
+              }
+            ]
+          },
+          "docs": "Returns a list of the top 100 tokens, sorted in descending order by the number of transactions."
+        },
+        {
+          "info": {
+            "name": "get-top-assets-by-volume",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/top-assets-by-volume",
+            "params": [
+              {
+                "name": "timeSpan",
+                "value": "",
+                "type": "query",
+                "description": "Time span, supported values: 7d, 15d, 30d."
+              }
+            ]
+          },
+          "docs": "Returns a list of emitter_chain and asset pairs with ordered by volume.\nThe volume is calculated using the notional price of the symbol at the day the VAA was emitted."
+        },
+        {
+          "info": {
+            "name": "get-top-chain-pairs-by-num-transfers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/top-chain-pairs-by-num-transfers",
+            "params": [
+              {
+                "name": "timeSpan",
+                "value": "",
+                "type": "query",
+                "description": "Time span, supported values: 7d, 15d, 30d."
+              }
+            ]
+          },
+          "docs": "Returns a list of the emitter_chain and destination_chain pair ordered by transfer count."
+        },
+        {
+          "info": {
+            "name": "top-symbols-by-volume",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/top-symbols-by-volume",
+            "params": [
+              {
+                "name": "timeSpan",
+                "value": "",
+                "type": "query",
+                "description": "Time span, supported values: 7d, 15d and 30d (default is 7d)."
+              }
+            ]
+          },
+          "docs": "Returns a list of symbols by origin chain and tokens.\nThe volume is calculated using the notional price of the symbol at the day the VAA was emitted."
+        },
+        {
+          "info": {
+            "name": "list-transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/transactions/",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number. Starts at 0."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              },
+              {
+                "name": "address",
+                "value": "",
+                "type": "query",
+                "description": "Filter transactions by Address."
+              }
+            ]
+          },
+          "docs": "Returns transactions. Output is paginated."
+        },
+        {
+          "info": {
+            "name": "get-transaction-by-id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/transactions/:chain_id/:emitter/:seq",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "id of the blockchain"
+              },
+              {
+                "name": "emitter",
+                "value": "",
+                "type": "path",
+                "description": "address of the emitter"
+              },
+              {
+                "name": "seq",
+                "value": "",
+                "type": "path",
+                "description": "sequence of the VAA"
+              }
+            ]
+          },
+          "docs": "Find VAA metadata by ID."
+        },
+        {
+          "info": {
+            "name": "find-all-vaas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/vaas/",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              },
+              {
+                "name": "txHash",
+                "value": "",
+                "type": "query",
+                "description": "Transaction hash of the VAA"
+              },
+              {
+                "name": "parsedPayload",
+                "value": "",
+                "type": "query",
+                "description": "include the parsed contents of the VAA, if available"
+              }
+            ]
+          },
+          "docs": "Returns all VAAs. Output is paginated and can also be be sorted."
+        },
+        {
+          "info": {
+            "name": "find-vaas-by-chain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/vaas/:chain_id",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "id of the blockchain"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              }
+            ]
+          },
+          "docs": "Returns all the VAAs generated in specific blockchain."
+        },
+        {
+          "info": {
+            "name": "find-vaas-by-emitter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/vaas/:chain_id/:emitter",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "id of the blockchain"
+              },
+              {
+                "name": "emitter",
+                "value": "",
+                "type": "path",
+                "description": "address of the emitter"
+              },
+              {
+                "name": "toChain",
+                "value": "",
+                "type": "query",
+                "description": "destination chain (deprecated param)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort results in ascending or descending order."
+              }
+            ]
+          },
+          "docs": "Returns all all the VAAs generated by a specific emitter address."
+        },
+        {
+          "info": {
+            "name": "find-vaa-by-id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/vaas/:chain_id/:emitter/:seq",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "id of the blockchain"
+              },
+              {
+                "name": "emitter",
+                "value": "",
+                "type": "path",
+                "description": "address of the emitter"
+              },
+              {
+                "name": "seq",
+                "value": "",
+                "type": "path",
+                "description": "sequence of the VAA"
+              },
+              {
+                "name": "parsedPayload",
+                "value": "",
+                "type": "query",
+                "description": "include the parsed contents of the VAA, if available"
+              }
+            ]
+          },
+          "docs": "Find a VAA by ID."
+        },
+        {
+          "info": {
+            "name": "find-duplicated-vaa-by-id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/vaas/:chain_id/:emitter/:seq/duplicated",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "id of the blockchain"
+              },
+              {
+                "name": "emitter",
+                "value": "",
+                "type": "path",
+                "description": "address of the emitter"
+              },
+              {
+                "name": "seq",
+                "value": "",
+                "type": "path",
+                "description": "sequence of the VAA"
+              }
+            ]
+          },
+          "docs": "Find duplicated VAA by ID."
+        },
+        {
+          "info": {
+            "name": "parse-vaa",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/vaas/parse"
+          },
+          "docs": "Parse a VAA."
+        },
+        {
+          "info": {
+            "name": "get-vaa-counts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/vaas/vaa-counts"
+          },
+          "docs": "Returns the total number of VAAs emitted for each blockchain."
+        },
+        {
+          "info": {
+            "name": "get-version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/version"
+          },
+          "docs": "Get version/release information."
+        },
+        {
+          "info": {
+            "name": "x-chain-activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/x-chain-activity",
+            "params": [
+              {
+                "name": "timeSpan",
+                "value": "",
+                "type": "query",
+                "description": "Time span, supported values: 7d, 30d, 90d, 1y and all-time (default is 7d)."
+              },
+              {
+                "name": "by",
+                "value": "",
+                "type": "query",
+                "description": "Renders the results using notional or tx count (default is notional)."
+              },
+              {
+                "name": "apps",
+                "value": "",
+                "type": "query",
+                "description": "List of apps separated by comma (default is all apps)."
+              }
+            ]
+          },
+          "docs": "Returns a list of chain pairs by origin chain and destination chain.\nThe list could be rendered by notional or transaction count.\nThe volume is calculated using the notional price of the symbol at the day the VAA was emitted."
+        },
+        {
+          "info": {
+            "name": "x-chain-activity-tops",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/x-chain-activity/tops",
+            "params": [
+              {
+                "name": "timespan",
+                "value": "",
+                "type": "query",
+                "description": "Time span, supported values: 1d, 1mo and 1y"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "From date, supported format 2006-01-02T15:04:05Z07:00"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "To date, supported format 2006-01-02T15:04:05Z07:00"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "query",
+                "description": "Search by appId"
+              },
+              {
+                "name": "sourceChain",
+                "value": "",
+                "type": "query",
+                "description": "Search by sourceChain"
+              },
+              {
+                "name": "targetChain",
+                "value": "",
+                "type": "query",
+                "description": "Search by targetChain"
+              }
+            ]
+          },
+          "docs": "Search for a specific period of time the number of transactions and the volume."
+        },
+        {
+          "info": {
+            "name": "swagger",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/swagger.json"
+          },
+          "docs": "Returns the swagger specification for this API."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

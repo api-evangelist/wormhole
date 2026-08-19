@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Wormholescan Guardian wormhole API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "wormhole",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get-secured-tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/wormhole/assets/secured-tokens"
+          },
+          "docs": "Returns a list of tokens secured by Wormhole, including Native Token Transfers and Portal Bridge tokens"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

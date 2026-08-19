@@ -1,0 +1,166 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Wormholescan Guardian API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Guardian",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "governor-available-notional-by-chain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/governor/available_notional_by_chain"
+          },
+          "docs": "Get available notional by chainID\nSince from the wormhole-explorer point of view it is not a node, but has the information of all nodes,\nin order to build the endpoints it was assumed:\nThere are N number of remainingAvailableNotional values in the GovernorConfig collection. N = number of guardians\nfor a chainID. The smallest remainingAvailableNotional value for a chainID is used for the endpoint response."
+        },
+        {
+          "info": {
+            "name": "guardians-enqueued-vaas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/governor/enqueued_vaas"
+          },
+          "docs": "Get enqueued VAAs"
+        },
+        {
+          "info": {
+            "name": "guardians-is-vaa-enqueued",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/governor/is_vaa_enqueued/:chain_id/:emitter/:seq",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "id of the blockchain"
+              },
+              {
+                "name": "emitter",
+                "value": "",
+                "type": "path",
+                "description": "address of the emitter"
+              },
+              {
+                "name": "seq",
+                "value": "",
+                "type": "path",
+                "description": "sequence of the vaa"
+              }
+            ]
+          },
+          "docs": "Check if vaa is enqueued"
+        },
+        {
+          "info": {
+            "name": "guardians-token-list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/governor/token_list"
+          },
+          "docs": "Get token list\nSince from the wormhole-explorer point of view it is not a node, but has the information of all nodes,\nin order to build the endpoints it was assumed:\nFor tokens with the same originChainId and originAddress and different price values for each node,\nthe price that has most occurrences in all the nodes for an originChainId and originAddress is returned."
+        },
+        {
+          "info": {
+            "name": "guardian-set",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/guardianset/current"
+          },
+          "docs": "Get current guardian set."
+        },
+        {
+          "info": {
+            "name": "guardians-hearbeats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/heartbeats"
+          },
+          "docs": "Get heartbeats for guardians"
+        },
+        {
+          "info": {
+            "name": "guardians-find-signed-batch-vaa",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/signed_batch_vaa/:chain_id/:emitter/sequence/:seq",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "id of the blockchain"
+              },
+              {
+                "name": "emitter",
+                "value": "",
+                "type": "path",
+                "description": "address of the emitter"
+              },
+              {
+                "name": "seq",
+                "value": "",
+                "type": "path",
+                "description": "sequence of the VAA"
+              }
+            ]
+          },
+          "docs": "get a batch of VAA []byte from a chainID, emitter address and sequence."
+        },
+        {
+          "info": {
+            "name": "guardians-find-signed-vaa",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/signed_vaa/:chain_id/:emitter/:seq",
+            "params": [
+              {
+                "name": "chain_id",
+                "value": "",
+                "type": "path",
+                "description": "id of the blockchain"
+              },
+              {
+                "name": "emitter",
+                "value": "",
+                "type": "path",
+                "description": "address of the emitter"
+              },
+              {
+                "name": "seq",
+                "value": "",
+                "type": "path",
+                "description": "sequence of the VAA"
+              }
+            ]
+          },
+          "docs": "get a VAA []byte from a chainID, emitter address and sequence."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
