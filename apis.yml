@@ -178,6 +178,8 @@ apis:
   - type: swagger-ui
     url: https://wormholescan.io/#/developers/api-doc
 common:
+- type: Website
+  url: https://wormhole.com
 - type: AgenticAccess
   url: agentic-access/wormhole-agentic-access.yml
 - type: DomainSecurity
