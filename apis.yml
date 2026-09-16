@@ -1,11 +1,11 @@
 name: Wormhole
-description: >
-  Wormhole is a decentralized cross-chain messaging and interoperability
-  protocol connecting 45+ blockchain networks. It provides REST APIs for
-  querying VAA (Verifiable Action Approval) status, native and wrapped
-  token transfers, cross-chain operations, and Guardian Network data via
-  the Wormholescan API. Developers can build multichain applications with
-  the TypeScript SDK, CLI tooling, and the Connect bridging widget.
+description: 'Wormhole is a decentralized cross-chain messaging and interoperability protocol connecting
+  45+ blockchain networks. It provides REST APIs for querying VAA (Verifiable Action Approval) status,
+  native and wrapped token transfers, cross-chain operations, and Guardian Network data via the Wormholescan
+  API. Developers can build multichain applications with the TypeScript SDK, CLI tooling, and the Connect
+  bridging widget.
+
+  '
 deliveryModel:
   model: saas
   open_source: false
@@ -32,21 +32,22 @@ accessModel:
   method: derived
 image: https://wormhole.com/logo.png
 tags:
-  - Cross-Chain
-  - Blockchain
-  - Interoperability
-  - DeFi
-  - Token Transfers
-  - Messaging
-  - Web3
+- Cross-Chain
+- Blockchain
+- Interoperability
+- DeFi
+- Token Transfers
+- Messaging
+- Web3
 url: https://wormhole.com/
 baseURL: https://api.wormholescan.io
 apis:
 - name: Wormholescan Testnet API
-  description: >
-    Testnet version of the Wormholescan REST API for development and testing against Wormhole-supported
+  description: 'Testnet version of the Wormholescan REST API for development and testing against Wormhole-supported
     test networks. Mirrors the mainnet API surface for VAAs, operations, and token transfers in a non-production
     environment.
+
+    '
   humanURL: https://wormhole.com/docs/products/messaging/guides/wormholescan-api/
   baseURL: https://api.testnet.wormholescan.io/api/v1
   tags:
@@ -64,10 +65,11 @@ apis:
   - key: environment
     value: testnet
 - name: Wormhole TypeScript SDK
-  description: >
-    Unified TypeScript SDK for building cross-chain applications on Wormhole. Supports Native Token Transfers,
-    Wrapped Token Transfers, CCTP, Settlement, and core messaging/VAA handling across EVM chains, Solana,
-    Algorand, Aptos, CosmWasm, and Sui.
+  description: 'Unified TypeScript SDK for building cross-chain applications on Wormhole. Supports Native
+    Token Transfers, Wrapped Token Transfers, CCTP, Settlement, and core messaging/VAA handling across
+    EVM chains, Solana, Algorand, Aptos, CosmWasm, and Sui.
+
+    '
   humanURL: https://wormhole.com/docs/tools/typescript-sdk/get-started/
   baseURL: https://npmjs.com/package/@wormhole-foundation/sdk
   tags:
@@ -89,9 +91,11 @@ apis:
   - key: npm-package
     value: '@wormhole-foundation/sdk'
 - name: Wormhole Connect Widget
-  description: >
-    Embeddable React widget that provides a full cross-chain token transfer UI powered by Wormhole. Supports
-    45+ chains and integrates Native Token Transfers, Wrapped Token Transfers, CCTP, and Settlement routing.
+  description: 'Embeddable React widget that provides a full cross-chain token transfer UI powered by
+    Wormhole. Supports 45+ chains and integrates Native Token Transfers, Wrapped Token Transfers, CCTP,
+    and Settlement routing.
+
+    '
   humanURL: https://wormhole.com/docs/products/connect/get-started/
   baseURL: https://npmjs.com/package/@wormhole-foundation/wormhole-connect
   tags:
@@ -111,9 +115,10 @@ apis:
   - key: npm-package
     value: '@wormhole-foundation/wormhole-connect'
 - name: Wormhole CLI
-  description: >
-    Command-line interface for interacting with Wormhole protocol operations including token transfers,
-    NTT deployments, and cross-chain messaging tasks.
+  description: 'Command-line interface for interacting with Wormhole protocol operations including token
+    transfers, NTT deployments, and cross-chain messaging tasks.
+
+    '
   humanURL: https://wormhole.com/docs/tools/cli/get-started/
   baseURL: https://npmjs.com/package/@wormhole-foundation/cli
   tags:
@@ -145,7 +150,7 @@ apis:
   - type: swagger-ui
     url: https://wormholescan.io/#/developers/api-doc
 - aid: wormhole:wormhole-wormhole-api
-  name: Wormhole wormhole API
+  name: Wormhole API
   description: The wormhole API from Wormhole — 1 operation(s) for wormhole.
   humanURL: https://wormhole.com/docs/products/messaging/guides/wormholescan-api/
   baseURL: https://api.wormholescan.io/api/v1
@@ -173,38 +178,38 @@ apis:
   - type: swagger-ui
     url: https://wormholescan.io/#/developers/api-doc
 common:
-  - type: AgenticAccess
-    url: agentic-access/wormhole-agentic-access.yml
-  - type: DomainSecurity
-    url: security/wormhole-domain-security.yml
-  - type: Portal
-    url: https://wormhole.com/docs/
-  - type: github
-    url: https://github.com/wormhole-foundation
-  - type: explorer
-    url: https://wormholescan.io/
-  - type: Blog
-    url: https://wormhole.com/blog/
-  - type: Contact
-    url: https://wormhole.com/contact
-  - type: Community
-    url: https://wormhole.com/community/hub
-  - type: Forums
-    url: https://forum.wormhole.com/
-  - type: Security
-    url: https://immunefi.com/bug-bounty/wormhole/
-  - type: status
-    url: https://wormholescan.io/
-  - type: Twitter
-    url: https://twitter.com/wormhole
-  - type: Discord
-    url: https://discord.gg/wormholecrypto
-  - type: TermsOfService
-    url: https://wormhole.com/terms
-  - type: PrivacyPolicy
-    url: https://wormhole.com/privacy
+- type: AgenticAccess
+  url: agentic-access/wormhole-agentic-access.yml
+- type: DomainSecurity
+  url: security/wormhole-domain-security.yml
+- type: Portal
+  url: https://wormhole.com/docs/
+- type: github
+  url: https://github.com/wormhole-foundation
+- type: explorer
+  url: https://wormholescan.io/
+- type: Blog
+  url: https://wormhole.com/blog/
+- type: Contact
+  url: https://wormhole.com/contact
+- type: Community
+  url: https://wormhole.com/community/hub
+- type: Forums
+  url: https://forum.wormhole.com/
+- type: Security
+  url: https://immunefi.com/bug-bounty/wormhole/
+- type: status
+  url: https://wormholescan.io/
+- type: Twitter
+  url: https://twitter.com/wormhole
+- type: Discord
+  url: https://discord.gg/wormholecrypto
+- type: TermsOfService
+  url: https://wormhole.com/terms
+- type: PrivacyPolicy
+  url: https://wormhole.com/privacy
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
-modified: "2026-06-13"
+- FN: Kin Lane
+  email: kin@apievangelist.com
+modified: '2026-09-16'
 specificationVersion: '0.23'
