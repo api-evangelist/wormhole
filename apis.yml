@@ -99,6 +99,11 @@ apis:
   humanURL: https://wormhole.com/docs/products/connect/get-started/
   baseURL: https://npmjs.com/package/@wormhole-foundation/wormhole-connect
   tags:
+  - Widgets
+  - React
+  - UI
+  - Token Bridge
+  tags_raw:
   - Widget
   - React
   - UI
