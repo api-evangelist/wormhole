@@ -1,9 +1,7 @@
 {
   "provider": "wormhole",
   "sources": [
-    "wormhole-guardian-api-openapi.yml",
-    "wormhole-wormhole-api-openapi.yml",
-    "wormhole-wormholescan-api-openapi.yml"
+    "_original/wormholescan-api.json"
   ],
   "outputs": [
     "wormhole-guardian-api-openapi.yml",
@@ -13,6 +11,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "wormholescan-api.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "wormholescan-api.json: declared missing tag: Guardian",
+    "wormholescan-api.json: declared missing tag: wormhole",
+    "wormholescan-api.json: declared missing tag: wormholescan",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "wormhole-guardian-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "wormhole-wormhole-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "wormhole-wormholescan-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
