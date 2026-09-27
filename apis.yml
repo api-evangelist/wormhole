@@ -169,7 +169,7 @@ apis:
   - type: swagger-ui
     url: https://wormholescan.io/#/developers/api-doc
 - aid: wormhole:wormhole-wormholescan-api
-  name: Wormhole wormholescan API
+  name: Wormhole Wormholescan API
   description: The wormholescan API from Wormhole — 64 operation(s) for wormholescan.
   humanURL: https://wormhole.com/docs/products/messaging/guides/wormholescan-api/
   baseURL: https://api.wormholescan.io/api/v1

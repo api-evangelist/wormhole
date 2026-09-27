@@ -2262,595 +2262,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    operations.EmitterAddress:
-      type: object
-      properties:
-        hex:
-          type: string
-        native:
-          type: string
-    transactions.TopAssetsResponse:
-      type: object
-      properties:
-        assets:
-          type: array
-          items:
-            $ref: '#/components/schemas/transactions.AssetWithVolume'
-    response.Response-address_AddressOverview:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/address.AddressOverview'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    transactions.ListTransactionsResponse:
-      type: object
-      properties:
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/transactions.TransactionDetail'
-    protocols.ProtocolTrendingTokensResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/protocols.ProtocolTrendingTokensResult'
-        protocol:
-          type: string
-    stats.NativeTokenTransferTopHolder:
-      type: object
-      properties:
-        address:
-          type: string
-        chain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        volume:
-          type: number
-    relays.InstructionsResponse:
-      type: object
-      properties:
-        encodedExecutionInfo:
-          type: string
-        extraReceiverValue:
-          type: object
-          properties:
-            _hex:
-              type: string
-            _isBigNumber:
-              type: boolean
-        refundAddress:
-          type: string
-        refundChainId:
-          type: integer
-        refundDeliveryProvider:
-          type: string
-        requestedReceiverValue:
-          type: object
-          properties:
-            _hex:
-              type: string
-            _isBigNumber:
-              type: boolean
-        senderAddress:
-          type: string
-        sourceDeliveryProvider:
-          type: string
-        targetAddress:
-          type: string
-        targetChainId:
-          type: integer
-        vaaKeys:
-          type: array
-          items: {}
-    governor.GovStatusChainEmitter:
-      type: object
-      properties:
-        emitterAddress:
-          type: string
-        enqueuedVaas: {}
-        totalEnqueuedVaas:
-          type: integer
-    stats.TopSymbolByVolumeResult:
-      type: object
-      properties:
-        symbols:
-          type: array
-          items:
-            $ref: '#/components/schemas/stats.TopSymbolResult'
-    address.AddressOverview:
-      type: object
-      properties:
-        vaas:
-          type: array
-          items:
-            $ref: '#/components/schemas/vaa.VaaDoc'
-    operations.StandardizedProperties:
-      type: object
-      properties:
-        amount:
-          type: string
-        appIds:
-          type: array
-          items:
-            type: string
-        fee:
-          type: string
-        feeAddress:
-          type: string
-        feeChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        fromAddress:
-          type: string
-        fromChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        normalizedDecimals:
-          type: integer
-        toAddress:
-          type: string
-        toChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        tokenAddress:
-          type: string
-        tokenChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-    response.APIError:
-      type: object
-      properties:
-        code:
-          description: support to guardian-api code.
-          type: integer
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/response.ErrorDetail'
-        message:
-          type: string
-    governor.EnqueuedVaas:
-      type: object
-      properties:
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-        enqueuedVaas:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.EnqueuedVaa'
-    protocols.ProtocolTrendingToken:
-      type: object
-      properties:
-        coingecko_id:
-          type: string
-        decimals:
-          type: integer
-        image:
-          type: object
-          properties:
-            large:
-              type: string
-            small:
-              type: string
-            thumb:
-              type: string
-        symbol:
-          type: string
-        token_address:
-          type: string
-        token_chain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        volume:
-          type: number
-    relays.DeliveryReponse:
-      type: object
-      properties:
-        budget:
-          type: string
-        execution:
-          $ref: '#/components/schemas/relays.ResultExecutionResponse'
-        maxRefund:
-          type: string
-        relayGasUsed:
-          type: integer
-        targetChainDecimals:
-          type: integer
-    response.Response-array_vaa_VaaDoc:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/vaa.VaaDoc'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    parser.ParseVaaWithStandarizedPropertiesdResponse:
-      type: object
-      properties:
-        parsedPayload: {}
-        standardizedProperties:
-          $ref: '#/components/schemas/parser.StandardizedProperties'
-    stats.NativeTokenTransferTopAddress:
-      type: object
-      properties:
-        fromAddress:
-          type: string
-        value:
-          type: number
-    transactions.TransactionDetail:
-      type: object
-      properties:
-        emitterAddress:
-          description: EmitterAddress contains the VAA's emitter address, encoded in hex.
-          type: string
-        emitterChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        emitterNativeAddress:
-          description: EmitterNativeAddress contains the VAA's emitter address, encoded in the emitter chain's native format.
-          type: string
-        globalTx:
-          $ref: '#/components/schemas/transactions.GlobalTransactionDoc'
-        id:
-          type: string
-        payload:
-          type: object
-          additionalProperties: true
-        standardizedProperties:
-          type: object
-          additionalProperties: true
-        symbol:
-          type: string
-        timestamp:
-          type: string
-        tokenAmount:
-          type: string
-        txHash:
-          type: string
-        usdAmount:
-          type: string
-    governor.GovConfigChains:
-      type: object
-      properties:
-        bigTransactionSize:
-          type: integer
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-        notionalLimit:
-          type: integer
-    stats.NativeTokenTransferByTime:
-      type: object
-      properties:
-        symbol:
-          type: string
-        time:
-          type: string
-        value:
-          type: number
-    relays.ResultExecutionResponse:
-      type: object
-      properties:
-        detail:
-          type: string
-        gasUsed:
-          type: string
-        refundStatus:
-          type: string
-        revertString:
-          type: string
-        status:
-          type: string
-        transactionHash:
-          type: string
-    transactions.Token:
-      type: object
-      properties:
-        coingeckoId:
-          type: string
-        decimals:
-          type: integer
-        symbol:
-          type: string
-    governor.GovConfig:
-      type: object
-      properties:
-        chains:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.GovConfigChains'
-        counter:
-          type: integer
-        createdAt:
-          type: string
-        id:
-          type: string
-        nodeName:
-          type: string
-        tokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.GovConfigfTokens'
-        updatedAt:
-          type: string
-    github_com_wormhole-foundation_wormhole-explorer_api_routes_wormscan_operations.BalanceChanges:
-      type: object
-      properties:
-        amount:
-          type: string
-        recipient:
-          type: string
-        tokenAddress:
-          type: string
-    transactions.ChainPair:
-      type: object
-      properties:
-        destinationChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        emitterChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        numberOfTransfers:
-          type: string
-    protocols.ProtocolTotalValuesDTO:
-      type: object
-      properties:
-        error:
-          type: string
-        period_diff_percentage:
-          type: string
-        period_diff_volume_percentage:
-          type: string
-        period_messages:
-          type: integer
-        period_volume:
-          type: number
-        protocol:
-          type: string
-        total_messages:
-          type: integer
-        total_value_locked:
-          type: number
-        total_value_secured:
-          type: number
-        total_value_transferred:
-          type: number
-    response.Response-governor_MaxNotionalAvailableRecord:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/governor.MaxNotionalAvailableRecord'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    governor.Emitter:
-      type: object
-      properties:
-        emitterAddress:
-          type: string
-        enqueuedVaas:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.EnqueuedVAA'
-        totalEnqueuedVaas:
-          type: integer
-    response.Response-array_governor_GovernorLimit:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.GovernorLimit'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    protocols.ProtocolTrendingTokensResult:
-      type: object
-      properties:
-        from:
-          type: string
-        to:
-          type: string
-        tokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/protocols.ProtocolTrendingToken'
-    vaa.VaaDoc:
-      type: object
-      properties:
-        digest:
-          type: string
-        emitterAddr:
-          type: string
-        emitterChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        emitterNativeAddr:
-          type: string
-        guardianSetIndex:
-          type: integer
-        id:
-          type: string
-        indexedAt:
-          type: string
-        isDuplicated:
-          type: boolean
-        isSolanaShim:
-          description: 'Payload is an extension field - it is not present in the guardian API.
-
-            Indicates whether the VAA was emitted through a SVM Shim program'
-          type: boolean
-        payload:
-          description: Payload is an extension field - it is not present in the guardian API.
-          type: object
-          additionalProperties: true
-        timestamp:
-          type: string
-        txHash:
-          description: TxHash is an extension field - it is not present in the guardian API.
-          type: string
-        updatedAt:
-          type: string
-        vaa:
-          type: array
-          items:
-            type: integer
-        version:
-          type: integer
-    stats.NativeTokenTransferActivity:
-      type: object
-      properties:
-        destinationChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        emitterChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        symbol:
-          type: string
-        value:
-          type: number
-    governor.NotionalLimitDetail:
-      type: object
-      properties:
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-        createdAt:
-          type: string
-        id:
-          type: string
-        maxTransactionSize:
-          type: integer
-        nodeName:
-          type: string
-        notionalLimit:
-          type: integer
-        updatedAt:
-          type: string
-    stats.TopCorridor:
-      type: object
-      properties:
-        emitter_chain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        target_chain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        token_address:
-          type: string
-        token_chain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        txs:
-          type: integer
-    operations.SourceChain:
-      type: object
-      properties:
-        attribute:
-          $ref: '#/components/schemas/operations.Data'
-        balanceChanges:
-          type: array
-          items:
-            $ref: '#/components/schemas/github_com_wormhole-foundation_wormhole-explorer_api_routes_wormscan_operations.BalanceChanges'
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-        fee:
-          type: string
-        feeUSD:
-          type: string
-        from:
-          type: string
-        gasTokenNotional:
-          type: string
-        isSolanaShim:
-          description: Indicates whether the VAA was emitted through a SVM Shim program
-          type: boolean
-        status:
-          type: string
-        timestamp:
-          type: string
-        transaction:
-          $ref: '#/components/schemas/operations.Transaction'
-    workflow.Event:
-      type: object
-      properties:
-        data: {}
-        error:
-          type: string
-        event:
-          $ref: '#/components/schemas/workflow.EventType'
-        status:
-          $ref: '#/components/schemas/workflow.EventStatus'
-        step:
-          type: integer
-        subscriptionId:
-          type: string
-        timestamp:
-          type: string
-        totalSteps:
-          type: integer
-    response.Response-array_vaa_VaaStats:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/vaa.VaaStats'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    stats.TopSymbolResult:
-      type: object
-      properties:
-        symbol:
-          type: string
-        tokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/stats.TokenResult'
-        txs:
-          type: number
-        volume:
-          type: number
-    workflow.EventStatus:
-      type: string
-      enum:
-      - PENDING
-      - DONE
-      x-enum-varnames:
-      - EventStatusPending
-      - EventStatusDone
-    governor.GovernorLimit:
-      type: object
-      properties:
-        availableNotional:
-          type: integer
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-        maxTransactionSize:
-          type: integer
-        notionalLimit:
-          type: integer
-    relays.RelayDataResponse:
-      type: object
-      properties:
-        delivery:
-          $ref: '#/components/schemas/relays.DeliveryReponse'
-        fromTxHash:
-          type: string
-        instructions:
-          $ref: '#/components/schemas/relays.InstructionsResponse'
-        maxAttempts:
-          type: integer
-        toTxHash:
-          type: string
-    transactions.TopChainPairsResponse:
-      type: object
-      properties:
-        chainPairs:
-          type: array
-          items:
-            $ref: '#/components/schemas/transactions.ChainPair'
-    response.Response-array_governor_EnqueuedVaaDetail:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.EnqueuedVaaDetail'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    response.Response-governor_GovConfig:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/governor.GovConfig'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
     stats.NativeTokenTransferSummary:
       type: object
       properties:
@@ -2879,154 +2290,21 @@ components:
           type: number
         totalValueTokenTransferred:
           type: number
-    relays.RelayResponse:
+    relays.ResultExecutionResponse:
       type: object
       properties:
-        completedAt:
+        detail:
           type: string
-        data:
-          $ref: '#/components/schemas/relays.RelayDataResponse'
-        failedAt:
+        gasUsed:
           type: string
-        id:
+        refundStatus:
           type: string
-        receivedAt:
-          type: string
-        relayer:
+        revertString:
           type: string
         status:
           type: string
-    stats.Token:
-      type: object
-      properties:
-        address:
+        transactionHash:
           type: string
-        chain_id:
-          $ref: '#/components/schemas/vaa.ChainID'
-        circulating_supply:
-          type: number
-        coingecko_id:
-          type: string
-        fully_diluted_valuation:
-          type: number
-        image:
-          type: object
-          properties:
-            large:
-              type: string
-            small:
-              type: string
-            thumb:
-              type: string
-        links:
-          type: object
-          additionalProperties: {}
-        market_cap:
-          type: number
-        platforms:
-          type: object
-          additionalProperties:
-            type: string
-        price:
-          type: number
-        price_change_percentage_24h:
-          type: number
-        symbol:
-          type: string
-        total_supply:
-          type: number
-        total_value_locked:
-          type: number
-        total_value_transferred:
-          type: number
-        volume_15d:
-          type: number
-        volume_1y:
-          type: number
-        volume_24h:
-          type: number
-        volume_30d:
-          type: number
-        volume_7d:
-          type: number
-        volume_90d:
-          type: number
-    observations.ObservationDoc:
-      type: object
-      properties:
-        emitterAddr:
-          type: string
-        emitterChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        guardianAddr:
-          type: string
-        hash:
-          type: array
-          items:
-            type: integer
-        id:
-          type: string
-        indexedAt:
-          type: string
-        sequence:
-          type: string
-        signature:
-          type: array
-          items:
-            type: integer
-        txHash:
-          type: array
-          items:
-            type: integer
-        updatedAt:
-          type: string
-    transactions.TransactionCountResult:
-      type: object
-      properties:
-        count:
-          type: integer
-        time:
-          type: string
-    protocols.ProtocolNetworkPairResult:
-      type: object
-      properties:
-        from:
-          type: string
-        to:
-          type: string
-        values:
-          type: array
-          items:
-            $ref: '#/components/schemas/protocols.ProtocolNetworkPairVolume'
-    response.Response-array_governor_GovStatus:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.GovStatus'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    transactions.OriginTx:
-      type: object
-      properties:
-        attribute:
-          $ref: '#/components/schemas/transactions.AttributeDoc'
-        from:
-          type: string
-        status:
-          type: string
-        txHash:
-          type: string
-    transactions.GlobalTransactionDoc:
-      type: object
-      properties:
-        destinationTx:
-          $ref: '#/components/schemas/transactions.DestinationTx'
-        id:
-          type: string
-        originTx:
-          $ref: '#/components/schemas/transactions.OriginTx'
     vaa.ChainID:
       type: integer
       enum:
@@ -3191,6 +2469,589 @@ components:
       - ChainIDPolygonSepolia
       - ChainIDMonadTestnet
       - ChainIDHyperCore
+    protocols.ProtocolTrendingToken:
+      type: object
+      properties:
+        coingecko_id:
+          type: string
+        decimals:
+          type: integer
+        image:
+          type: object
+          properties:
+            large:
+              type: string
+            small:
+              type: string
+            thumb:
+              type: string
+        symbol:
+          type: string
+        token_address:
+          type: string
+        token_chain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        volume:
+          type: number
+    governor.GovStatusChains:
+      type: object
+      properties:
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        emitters:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.GovStatusChainEmitter'
+        remainingAvailableNotional:
+          type: integer
+    response.Response-address_AddressOverview:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/address.AddressOverview'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    governor.GovConfig:
+      type: object
+      properties:
+        chains:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.GovConfigChains'
+        counter:
+          type: integer
+        createdAt:
+          type: string
+        id:
+          type: string
+        nodeName:
+          type: string
+        tokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.GovConfigfTokens'
+        updatedAt:
+          type: string
+    operations.Transaction:
+      type: object
+      properties:
+        secondTxHash:
+          type: string
+        txHash:
+          type: string
+    governor.NotionalAvailableDetail:
+      type: object
+      properties:
+        availableNotional:
+          type: integer
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        createdAt:
+          type: string
+        id:
+          type: string
+        nodeName:
+          type: string
+        updatedAt:
+          type: string
+    stats.NativeTokenTransferByTime:
+      type: object
+      properties:
+        symbol:
+          type: string
+        time:
+          type: string
+        value:
+          type: number
+    operations.SourceChain:
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/operations.Data'
+        balanceChanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/github_com_wormhole-foundation_wormhole-explorer_api_routes_wormscan_operations.BalanceChanges'
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        fee:
+          type: string
+        feeUSD:
+          type: string
+        from:
+          type: string
+        gasTokenNotional:
+          type: string
+        isSolanaShim:
+          description: Indicates whether the VAA was emitted through a SVM Shim program
+          type: boolean
+        status:
+          type: string
+        timestamp:
+          type: string
+        transaction:
+          $ref: '#/components/schemas/operations.Transaction'
+    governor.GovernorLimit:
+      type: object
+      properties:
+        availableNotional:
+          type: integer
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        maxTransactionSize:
+          type: integer
+        notionalLimit:
+          type: integer
+    stats.TopCorridor:
+      type: object
+      properties:
+        emitter_chain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        target_chain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        token_address:
+          type: string
+        token_chain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        txs:
+          type: integer
+    response.Response-array_governor_GovernorVaasResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.GovernorVaasResponse'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    transactions.TopAssetsResponse:
+      type: object
+      properties:
+        assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/transactions.AssetWithVolume'
+    workflow.EventType:
+      type: string
+      enum:
+      - SOURCE_TX
+      - GOVERNOR
+      - SIGNED_VAA
+      - VAA_REDEEMED
+      - END_OF_WORKFLOW
+      - ERROR
+      - SEARCHING
+      x-enum-varnames:
+      - EventTypeSourceTx
+      - EventTypeGovernor
+      - EventTypeSignedVaa
+      - EventTypeVaaRedeemed
+      - EventTypeEOW
+      - EventTypeError
+      - EventTypeSearching
+    governor.EnqueuedVAA:
+      type: object
+      properties:
+        notionalValue:
+          type: integer
+        releaseTime:
+          type: string
+        sequence:
+          type: string
+        txHash:
+          type: string
+    protocols.ProtocolTrendingTokensResult:
+      type: object
+      properties:
+        from:
+          type: string
+        to:
+          type: string
+        tokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/protocols.ProtocolTrendingToken'
+    operations.Content:
+      type: object
+      properties:
+        executorRequest: {}
+        payload:
+          type: object
+          additionalProperties: {}
+        standarizedProperties:
+          $ref: '#/components/schemas/operations.StandardizedProperties'
+    governor.GovConfigChains:
+      type: object
+      properties:
+        bigTransactionSize:
+          type: integer
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        notionalLimit:
+          type: integer
+    relays.InstructionsResponse:
+      type: object
+      properties:
+        encodedExecutionInfo:
+          type: string
+        extraReceiverValue:
+          type: object
+          properties:
+            _hex:
+              type: string
+            _isBigNumber:
+              type: boolean
+        refundAddress:
+          type: string
+        refundChainId:
+          type: integer
+        refundDeliveryProvider:
+          type: string
+        requestedReceiverValue:
+          type: object
+          properties:
+            _hex:
+              type: string
+            _isBigNumber:
+              type: boolean
+        senderAddress:
+          type: string
+        sourceDeliveryProvider:
+          type: string
+        targetAddress:
+          type: string
+        targetChainId:
+          type: integer
+        vaaKeys:
+          type: array
+          items: {}
+    stats.NativeTokenTransferTopHolder:
+      type: object
+      properties:
+        address:
+          type: string
+        chain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        volume:
+          type: number
+    infrastructure.VersionResponse:
+      type: object
+      properties:
+        build:
+          type: string
+        build_date:
+          type: string
+        version:
+          type: string
+    governor.NotionalAvailable:
+      type: object
+      properties:
+        availableNotional:
+          type: integer
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+    protocols.ProtocolTotalValuesDTO:
+      type: object
+      properties:
+        error:
+          type: string
+        period_diff_percentage:
+          type: string
+        period_diff_volume_percentage:
+          type: string
+        period_messages:
+          type: integer
+        period_volume:
+          type: number
+        protocol:
+          type: string
+        total_messages:
+          type: integer
+        total_value_locked:
+          type: number
+        total_value_secured:
+          type: number
+        total_value_transferred:
+          type: number
+    transactions.ChainActivity:
+      type: object
+      properties:
+        txs:
+          type: array
+          items:
+            $ref: '#/components/schemas/transactions.Tx'
+    response.Response-array_governor_NotionalAvailable:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.NotionalAvailable'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    transactions.Tx:
+      type: object
+      properties:
+        chain:
+          type: integer
+        destinations:
+          type: array
+          items:
+            $ref: '#/components/schemas/transactions.Destination'
+        percentage:
+          type: number
+        volume:
+          type: number
+    transactions.TransactionCountResult:
+      type: object
+      properties:
+        count:
+          type: integer
+        time:
+          type: string
+    operations.EmitterAddress:
+      type: object
+      properties:
+        hex:
+          type: string
+        native:
+          type: string
+    response.Response-array_vaa_VaaDoc:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/vaa.VaaDoc'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    workflow.EventStatus:
+      type: string
+      enum:
+      - PENDING
+      - DONE
+      x-enum-varnames:
+      - EventStatusPending
+      - EventStatusDone
+    vaa.VaaStats:
+      type: object
+      properties:
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        count:
+          type: integer
+    response.Response-array_governor_NotionalAvailableDetail:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.NotionalAvailableDetail'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    transactions.TopChainPairsResponse:
+      type: object
+      properties:
+        chainPairs:
+          type: array
+          items:
+            $ref: '#/components/schemas/transactions.ChainPair'
+    response.Response-guardian_sets_GuardianSetDoc:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/guardian_sets.GuardianSetDoc'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    transactions.DestinationTx:
+      type: object
+      properties:
+        blockNumber:
+          type: string
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        from:
+          type: string
+        method:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+        to:
+          type: string
+        txHash:
+          type: string
+        updatedAt:
+          type: string
+    governor.GovStatus:
+      type: object
+      properties:
+        chains:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.GovStatusChains'
+        createdAt:
+          type: string
+        id:
+          type: string
+        nodeName:
+          type: string
+        updatedAt:
+          type: string
+    supply.SupplyInfoResponse:
+      type: object
+      properties:
+        circulating_supply:
+          type: string
+        total_supply:
+          type: string
+    response.APIError:
+      type: object
+      properties:
+        code:
+          description: support to guardian-api code.
+          type: integer
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/response.ErrorDetail'
+        message:
+          type: string
+    operations.OperationResponse:
+      type: object
+      properties:
+        content:
+          $ref: '#/components/schemas/operations.Content'
+        data:
+          type: object
+          additionalProperties: {}
+        emitterAddress:
+          $ref: '#/components/schemas/operations.EmitterAddress'
+        emitterChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        id:
+          type: string
+        sequence:
+          type: string
+        sourceChain:
+          $ref: '#/components/schemas/operations.SourceChain'
+        targetChain:
+          $ref: '#/components/schemas/operations.TargetChain'
+        vaa:
+          $ref: '#/components/schemas/operations.Vaa'
+    governor.Emitter:
+      type: object
+      properties:
+        emitterAddress:
+          type: string
+        enqueuedVaas:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.EnqueuedVAA'
+        totalEnqueuedVaas:
+          type: integer
+    response.Response-array_governor_GovStatus:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.GovStatus'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    response.Response-array_governor_EnqueuedVaas:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.EnqueuedVaas'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    governor.GovStatusChainEmitter:
+      type: object
+      properties:
+        emitterAddress:
+          type: string
+        enqueuedVaas: {}
+        totalEnqueuedVaas:
+          type: integer
+    transactions.AssetWithVolume:
+      type: object
+      properties:
+        emitterChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        symbol:
+          type: string
+        tokenAddress:
+          type: string
+        tokenChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        volume:
+          type: string
+    stats.Token:
+      type: object
+      properties:
+        address:
+          type: string
+        chain_id:
+          $ref: '#/components/schemas/vaa.ChainID'
+        circulating_supply:
+          type: number
+        coingecko_id:
+          type: string
+        fully_diluted_valuation:
+          type: number
+        image:
+          type: object
+          properties:
+            large:
+              type: string
+            small:
+              type: string
+            thumb:
+              type: string
+        links:
+          type: object
+          additionalProperties: {}
+        market_cap:
+          type: number
+        platforms:
+          type: object
+          additionalProperties:
+            type: string
+        price:
+          type: number
+        price_change_percentage_24h:
+          type: number
+        symbol:
+          type: string
+        total_supply:
+          type: number
+        total_value_locked:
+          type: number
+        total_value_transferred:
+          type: number
+        volume_15d:
+          type: number
+        volume_1y:
+          type: number
+        volume_24h:
+          type: number
+        volume_30d:
+          type: number
+        volume_7d:
+          type: number
+        volume_90d:
+          type: number
+    response.Response-governor_MaxNotionalAvailableRecord:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/governor.MaxNotionalAvailableRecord'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
     governor.MaxNotionalAvailableRecord:
       type: object
       properties:
@@ -3210,57 +3071,27 @@ components:
           type: string
         updatedAt:
           type: string
-    workflow.EventType:
-      type: string
-      enum:
-      - SOURCE_TX
-      - GOVERNOR
-      - SIGNED_VAA
-      - VAA_REDEEMED
-      - END_OF_WORKFLOW
-      - ERROR
-      - SEARCHING
-      x-enum-varnames:
-      - EventTypeSourceTx
-      - EventTypeGovernor
-      - EventTypeSignedVaa
-      - EventTypeVaaRedeemed
-      - EventTypeEOW
-      - EventTypeError
-      - EventTypeSearching
-    guardian_sets.GuardianSetDoc:
+    parser.ParseVaaWithStandarizedPropertiesdResponse:
       type: object
       properties:
-        addresses:
+        parsedPayload: {}
+        standardizedProperties:
+          $ref: '#/components/schemas/parser.StandardizedProperties'
+    governor.EnqueuedVaas:
+      type: object
+      properties:
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        enqueuedVaas:
           type: array
           items:
-            $ref: '#/components/schemas/guardian_sets.GuardianAddress'
-        version:
-          type: integer
-    transactions.Tx:
+            $ref: '#/components/schemas/governor.EnqueuedVaa'
+    guardian_sets.GuardianAddress:
       type: object
       properties:
-        chain:
-          type: integer
-        destinations:
-          type: array
-          items:
-            $ref: '#/components/schemas/transactions.Destination'
-        percentage:
-          type: number
-        volume:
-          type: number
-    response.ResponsePagination:
-      type: object
-      properties:
-        next:
+        address:
           type: string
-    response.ErrorDetail:
-      type: object
-      properties:
-        request_id:
-          type: string
-        stack_trace:
+        name:
           type: string
     operations.Data:
       type: object
@@ -3270,6 +3101,42 @@ components:
         value:
           type: object
           additionalProperties: {}
+    operations.StandardizedProperties:
+      type: object
+      properties:
+        amount:
+          type: string
+        appIds:
+          type: array
+          items:
+            type: string
+        fee:
+          type: string
+        feeAddress:
+          type: string
+        feeChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        fromAddress:
+          type: string
+        fromChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        normalizedDecimals:
+          type: integer
+        toAddress:
+          type: string
+        toChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        tokenAddress:
+          type: string
+        tokenChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+    protocols.ProtocolNetworkPairResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/protocols.ProtocolNetworkPairResult'
+        protocol:
+          type: string
     transactions.ScorecardsResponse:
       type: object
       properties:
@@ -3314,44 +3181,268 @@ components:
         tvl:
           description: Total value locked in USD.
           type: string
-    operations.OperationResponse:
+    relays.DeliveryReponse:
       type: object
       properties:
-        content:
-          $ref: '#/components/schemas/operations.Content'
+        budget:
+          type: string
+        execution:
+          $ref: '#/components/schemas/relays.ResultExecutionResponse'
+        maxRefund:
+          type: string
+        relayGasUsed:
+          type: integer
+        targetChainDecimals:
+          type: integer
+    governor.EnqueuedVaa:
+      type: object
+      properties:
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        emitterAddress:
+          type: string
+        notionalValue:
+          type: integer
+        sequence:
+          type: string
+        txHash:
+          type: string
+    transactions.OriginTx:
+      type: object
+      properties:
+        attribute:
+          $ref: '#/components/schemas/transactions.AttributeDoc'
+        from:
+          type: string
+        status:
+          type: string
+        txHash:
+          type: string
+    response.ResponsePagination:
+      type: object
+      properties:
+        next:
+          type: string
+    response.Response-array_governor_GovernorLimit:
+      type: object
+      properties:
         data:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.GovernorLimit'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    transactions.AttributeDoc:
+      type: object
+      properties:
+        type:
+          type: string
+        value:
           type: object
           additionalProperties: {}
-        emitterAddress:
-          $ref: '#/components/schemas/operations.EmitterAddress'
+    observations.ObservationDoc:
+      type: object
+      properties:
+        emitterAddr:
+          type: string
         emitterChain:
           $ref: '#/components/schemas/vaa.ChainID'
+        guardianAddr:
+          type: string
+        hash:
+          type: array
+          items:
+            type: integer
         id:
+          type: string
+        indexedAt:
           type: string
         sequence:
           type: string
-        sourceChain:
-          $ref: '#/components/schemas/operations.SourceChain'
-        targetChain:
-          $ref: '#/components/schemas/operations.TargetChain'
-        vaa:
-          $ref: '#/components/schemas/operations.Vaa'
-    protocols.ProtocolNetworkPairVolume:
-      type: object
-      properties:
-        destination_chain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        source_chain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        volume_usd:
-          type: number
-    transactions.ChainActivity:
-      type: object
-      properties:
-        txs:
+        signature:
           type: array
           items:
-            $ref: '#/components/schemas/transactions.Tx'
+            type: integer
+        txHash:
+          type: array
+          items:
+            type: integer
+        updatedAt:
+          type: string
+    transactions.ListTransactionsResponse:
+      type: object
+      properties:
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/transactions.TransactionDetail'
+    protocols.ProtocolNetworkPairResult:
+      type: object
+      properties:
+        from:
+          type: string
+        to:
+          type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/protocols.ProtocolNetworkPairVolume'
+    parser.StandardizedProperties:
+      type: object
+      properties:
+        amount:
+          type: string
+        appIds:
+          type: array
+          items:
+            type: string
+        fee:
+          type: string
+        feeAddress:
+          type: string
+        feeChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        fromAddress:
+          type: string
+        fromChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        normalizedDecimals:
+          type: integer
+        toAddress:
+          type: string
+        toChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        tokenAddress:
+          type: string
+        tokenChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+    stats.NativeTokenTransferTopAddress:
+      type: object
+      properties:
+        fromAddress:
+          type: string
+        value:
+          type: number
+    response.Response-governor_GovStatus:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/governor.GovStatus'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    stats.TokenResult:
+      type: object
+      properties:
+        emitter_chain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        token_address:
+          type: string
+        token_chain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        txs:
+          type: number
+        volume:
+          type: number
+    github_com_wormhole-foundation_wormhole-explorer_api_routes_wormscan_operations.BalanceChanges:
+      type: object
+      properties:
+        amount:
+          type: string
+        recipient:
+          type: string
+        tokenAddress:
+          type: string
+    governor.NotionalLimitDetail:
+      type: object
+      properties:
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        createdAt:
+          type: string
+        id:
+          type: string
+        maxTransactionSize:
+          type: integer
+        nodeName:
+          type: string
+        notionalLimit:
+          type: integer
+        updatedAt:
+          type: string
+    governor.GovernorVaasResponse:
+      type: object
+      properties:
+        amount:
+          type: integer
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        emitterAddress:
+          type: string
+        releaseTime:
+          type: string
+        sequence:
+          type: string
+        status:
+          type: string
+        txHash:
+          type: string
+        vaaId:
+          type: string
+    transactions.GlobalTransactionDoc:
+      type: object
+      properties:
+        destinationTx:
+          $ref: '#/components/schemas/transactions.DestinationTx'
+        id:
+          type: string
+        originTx:
+          $ref: '#/components/schemas/transactions.OriginTx'
+    response.Response-governor_GovConfig:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/governor.GovConfig'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    stats.TopCorridorsResult:
+      type: object
+      properties:
+        corridors:
+          type: array
+          items:
+            $ref: '#/components/schemas/stats.TopCorridor'
+    operations.TargetChain:
+      type: object
+      properties:
+        balanceChanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/github_com_wormhole-foundation_wormhole-explorer_api_routes_wormscan_operations.BalanceChanges'
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        fee:
+          type: string
+        feeUSD:
+          type: string
+        from:
+          type: string
+        gasTokenNotional:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+        to:
+          type: string
+        transaction:
+          $ref: '#/components/schemas/operations.Transaction'
+    stats.TopSymbolByVolumeResult:
+      type: object
+      properties:
+        symbols:
+          type: array
+          items:
+            $ref: '#/components/schemas/stats.TopSymbolResult'
     transactions.ChainActivityTopResult:
       type: object
       properties:
@@ -3367,36 +3458,74 @@ components:
           type: string
         volume:
           type: integer
-    supply.SupplyInfoResponse:
+    stats.TopSymbolResult:
       type: object
       properties:
-        circulating_supply:
+        symbol:
           type: string
-        total_supply:
-          type: string
-    governor.NotionalAvailableDetail:
+        tokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/stats.TokenResult'
+        txs:
+          type: number
+        volume:
+          type: number
+    vaa.VaaDoc:
       type: object
       properties:
-        availableNotional:
-          type: integer
-        chainId:
+        digest:
+          type: string
+        emitterAddr:
+          type: string
+        emitterChain:
           $ref: '#/components/schemas/vaa.ChainID'
-        createdAt:
+        emitterNativeAddr:
           type: string
+        guardianSetIndex:
+          type: integer
         id:
           type: string
-        nodeName:
+        indexedAt:
+          type: string
+        isDuplicated:
+          type: boolean
+        isSolanaShim:
+          description: 'Payload is an extension field - it is not present in the guardian API.
+
+            Indicates whether the VAA was emitted through a SVM Shim program'
+          type: boolean
+        payload:
+          description: Payload is an extension field - it is not present in the guardian API.
+          type: object
+          additionalProperties: true
+        timestamp:
+          type: string
+        txHash:
+          description: TxHash is an extension field - it is not present in the guardian API.
           type: string
         updatedAt:
           type: string
-    transactions.AttributeDoc:
+        vaa:
+          type: array
+          items:
+            type: integer
+        version:
+          type: integer
+    address.AddressOverview:
       type: object
       properties:
-        type:
+        vaas:
+          type: array
+          items:
+            $ref: '#/components/schemas/vaa.VaaDoc'
+    protocols.ProtocolTrendingTokensResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/protocols.ProtocolTrendingTokensResult'
+        protocol:
           type: string
-        value:
-          type: object
-          additionalProperties: {}
     delegate_observations.DelegateObservationDoc:
       type: object
       properties:
@@ -3445,140 +3574,55 @@ components:
           type: string
         verificationState:
           type: integer
-    governor.GovConfigfTokens:
+    transactions.ChainPair:
       type: object
       properties:
-        originAddress:
-          type: string
-        originChainId:
-          type: integer
-        price:
-          type: number
-    stats.TokenResult:
-      type: object
-      properties:
-        emitter_chain:
+        destinationChain:
           $ref: '#/components/schemas/vaa.ChainID'
-        token_address:
-          type: string
-        token_chain:
+        emitterChain:
           $ref: '#/components/schemas/vaa.ChainID'
-        txs:
-          type: number
-        volume:
-          type: number
-    response.Response-array_governor_NotionalLimitDetail:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.NotionalLimitDetail'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    stats.image:
-      type: object
-      properties:
-        large:
+        numberOfTransfers:
           type: string
-        small:
-          type: string
-        thumb:
-          type: string
-    transactions.Destination:
+    transactions.TransactionDetail:
       type: object
       properties:
-        chain:
-          type: integer
-        percentage:
-          type: number
-        volume:
-          type: number
-    governor.GovStatusChains:
-      type: object
-      properties:
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-        emitters:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.GovStatusChainEmitter'
-        remainingAvailableNotional:
-          type: integer
-    stats.TopCorridorsResult:
-      type: object
-      properties:
-        corridors:
-          type: array
-          items:
-            $ref: '#/components/schemas/stats.TopCorridor'
-    response.Response-guardian_sets_GuardianSetDoc:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/guardian_sets.GuardianSetDoc'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    governor.EnqueuedVaa:
-      type: object
-      properties:
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
         emitterAddress:
+          description: EmitterAddress contains the VAA's emitter address, encoded in hex.
           type: string
-        notionalValue:
-          type: integer
-        sequence:
+        emitterChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        emitterNativeAddress:
+          description: EmitterNativeAddress contains the VAA's emitter address, encoded in the emitter chain's native format.
+          type: string
+        globalTx:
+          $ref: '#/components/schemas/transactions.GlobalTransactionDoc'
+        id:
+          type: string
+        payload:
+          type: object
+          additionalProperties: true
+        standardizedProperties:
+          type: object
+          additionalProperties: true
+        symbol:
+          type: string
+        timestamp:
+          type: string
+        tokenAmount:
           type: string
         txHash:
           type: string
-    governor.EnqueuedVAA:
+        usdAmount:
+          type: string
+    transactions.Token:
       type: object
       properties:
-        notionalValue:
+        coingeckoId:
+          type: string
+        decimals:
           type: integer
-        releaseTime:
+        symbol:
           type: string
-        sequence:
-          type: string
-        txHash:
-          type: string
-    operations.Transaction:
-      type: object
-      properties:
-        secondTxHash:
-          type: string
-        txHash:
-          type: string
-    parser.StandardizedProperties:
-      type: object
-      properties:
-        amount:
-          type: string
-        appIds:
-          type: array
-          items:
-            type: string
-        fee:
-          type: string
-        feeAddress:
-          type: string
-        feeChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        fromAddress:
-          type: string
-        fromChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        normalizedDecimals:
-          type: integer
-        toAddress:
-          type: string
-        toChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        tokenAddress:
-          type: string
-        tokenChain:
-          $ref: '#/components/schemas/vaa.ChainID'
     governor.EnqueuedVaaDetail:
       type: object
       properties:
@@ -3594,112 +3638,84 @@ components:
           type: string
         txHash:
           type: string
-    transactions.AssetWithVolume:
+    protocols.ProtocolNetworkPairVolume:
       type: object
       properties:
+        destination_chain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        source_chain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        volume_usd:
+          type: number
+    transactions.Destination:
+      type: object
+      properties:
+        chain:
+          type: integer
+        percentage:
+          type: number
+        volume:
+          type: number
+    relays.RelayDataResponse:
+      type: object
+      properties:
+        delivery:
+          $ref: '#/components/schemas/relays.DeliveryReponse'
+        fromTxHash:
+          type: string
+        instructions:
+          $ref: '#/components/schemas/relays.InstructionsResponse'
+        maxAttempts:
+          type: integer
+        toTxHash:
+          type: string
+    stats.image:
+      type: object
+      properties:
+        large:
+          type: string
+        small:
+          type: string
+        thumb:
+          type: string
+    response.Response-array_vaa_VaaStats:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/vaa.VaaStats'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    response.Response-array_governor_EnqueuedVaaDetail:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.EnqueuedVaaDetail'
+        pagination:
+          $ref: '#/components/schemas/response.ResponsePagination'
+    stats.NativeTokenTransferActivity:
+      type: object
+      properties:
+        destinationChain:
+          $ref: '#/components/schemas/vaa.ChainID'
         emitterChain:
           $ref: '#/components/schemas/vaa.ChainID'
         symbol:
           type: string
-        tokenAddress:
-          type: string
-        tokenChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        volume:
-          type: string
-    response.Response-array_governor_EnqueuedVaas:
+        value:
+          type: number
+    response.Response-array_governor_NotionalLimitDetail:
       type: object
       properties:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/governor.EnqueuedVaas'
+            $ref: '#/components/schemas/governor.NotionalLimitDetail'
         pagination:
           $ref: '#/components/schemas/response.ResponsePagination'
-    governor.NotionalAvailable:
-      type: object
-      properties:
-        availableNotional:
-          type: integer
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-    response.Response-array_governor_NotionalAvailable:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.NotionalAvailable'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    governor.GovStatus:
-      type: object
-      properties:
-        chains:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.GovStatusChains'
-        createdAt:
-          type: string
-        id:
-          type: string
-        nodeName:
-          type: string
-        updatedAt:
-          type: string
-    response.Response-array_governor_NotionalAvailableDetail:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.NotionalAvailableDetail'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    operations.Content:
-      type: object
-      properties:
-        executorRequest: {}
-        payload:
-          type: object
-          additionalProperties: {}
-        standarizedProperties:
-          $ref: '#/components/schemas/operations.StandardizedProperties'
-    infrastructure.VersionResponse:
-      type: object
-      properties:
-        build:
-          type: string
-        build_date:
-          type: string
-        version:
-          type: string
-    protocols.ProtocolNetworkPairResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/protocols.ProtocolNetworkPairResult'
-        protocol:
-          type: string
-    governor.GovernorVaasResponse:
-      type: object
-      properties:
-        amount:
-          type: integer
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-        emitterAddress:
-          type: string
-        releaseTime:
-          type: string
-        sequence:
-          type: string
-        status:
-          type: string
-        txHash:
-          type: string
-        vaaId:
-          type: string
     operations.Vaa:
       type: object
       properties:
@@ -3711,79 +3727,63 @@ components:
           type: array
           items:
             type: integer
-    transactions.DestinationTx:
+    guardian_sets.GuardianSetDoc:
       type: object
       properties:
-        blockNumber:
-          type: string
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-        from:
-          type: string
-        method:
-          type: string
-        status:
-          type: string
-        timestamp:
-          type: string
-        to:
-          type: string
-        txHash:
-          type: string
-        updatedAt:
-          type: string
-    response.Response-array_governor_GovernorVaasResponse:
-      type: object
-      properties:
-        data:
+        addresses:
           type: array
           items:
-            $ref: '#/components/schemas/governor.GovernorVaasResponse'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
-    operations.TargetChain:
-      type: object
-      properties:
-        balanceChanges:
-          type: array
-          items:
-            $ref: '#/components/schemas/github_com_wormhole-foundation_wormhole-explorer_api_routes_wormscan_operations.BalanceChanges'
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-        fee:
-          type: string
-        feeUSD:
-          type: string
-        from:
-          type: string
-        gasTokenNotional:
-          type: string
-        status:
-          type: string
-        timestamp:
-          type: string
-        to:
-          type: string
-        transaction:
-          $ref: '#/components/schemas/operations.Transaction'
-    guardian_sets.GuardianAddress:
-      type: object
-      properties:
-        address:
-          type: string
-        name:
-          type: string
-    vaa.VaaStats:
-      type: object
-      properties:
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-        count:
+            $ref: '#/components/schemas/guardian_sets.GuardianAddress'
+        version:
           type: integer
-    response.Response-governor_GovStatus:
+    governor.GovConfigfTokens:
       type: object
       properties:
+        originAddress:
+          type: string
+        originChainId:
+          type: integer
+        price:
+          type: number
+    response.ErrorDetail:
+      type: object
+      properties:
+        request_id:
+          type: string
+        stack_trace:
+          type: string
+    workflow.Event:
+      type: object
+      properties:
+        data: {}
+        error:
+          type: string
+        event:
+          $ref: '#/components/schemas/workflow.EventType'
+        status:
+          $ref: '#/components/schemas/workflow.EventStatus'
+        step:
+          type: integer
+        subscriptionId:
+          type: string
+        timestamp:
+          type: string
+        totalSteps:
+          type: integer
+    relays.RelayResponse:
+      type: object
+      properties:
+        completedAt:
+          type: string
         data:
-          $ref: '#/components/schemas/governor.GovStatus'
-        pagination:
-          $ref: '#/components/schemas/response.ResponsePagination'
+          $ref: '#/components/schemas/relays.RelayDataResponse'
+        failedAt:
+          type: string
+        id:
+          type: string
+        receivedAt:
+          type: string
+        relayer:
+          type: string
+        status:
+          type: string
