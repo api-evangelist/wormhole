@@ -49,6 +49,14 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    stats.TokenType:
+      type: string
+      enum:
+      - NATIVE_TOKEN_TRANSFER
+      - PORTAL_TOKEN_BRIDGE
+      x-enum-varnames:
+      - NativeTokenTransfer
+      - PortalTokenBridge
     stats.TokenInfoDTO:
       type: object
       properties:
@@ -90,11 +98,3 @@ components:
           type: number
         volume_90d:
           type: number
-    stats.TokenType:
-      type: string
-      enum:
-      - NATIVE_TOKEN_TRANSFER
-      - PORTAL_TOKEN_BRIDGE
-      x-enum-varnames:
-      - NativeTokenTransfer
-      - PortalTokenBridge
