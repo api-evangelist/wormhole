@@ -1,19 +1,110 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/wormholescan-api.json
+source: openapi/wormhole-guardian-api-openapi.yml, openapi/wormhole-wormhole-api-openapi.yml,
+  openapi/wormhole-wormholescan-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 74
   by_action_class:
-    connected: 72
-    acting: 2
+    connected: 73
+    acting: 1
   by_consequence:
-    read: 72
-    write: 2
+    read: 73
+    write: 1
   human_in_the_loop_required: 0
 operations:
+- path: /v1/governor/available_notional_by_chain
+  method: get
+  operationId: governor-available-notional-by-chain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/governor/enqueued_vaas
+  method: get
+  operationId: guardians-enqueued-vaas
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/governor/is_vaa_enqueued/:chain_id/:emitter/:seq
+  method: get
+  operationId: guardians-is-vaa-enqueued
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/governor/token_list
+  method: get
+  operationId: guardians-token-list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/guardianset/current
+  method: get
+  operationId: guardian-set
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/heartbeats
+  method: get
+  operationId: guardians-hearbeats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/signed_batch_vaa/:chain_id/:emitter/sequence/:seq
+  method: get
+  operationId: guardians-find-signed-batch-vaa
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/signed_vaa/:chain_id/:emitter/:seq
+  method: get
+  operationId: guardians-find-signed-vaa
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/wormhole/assets/secured-tokens
+  method: get
+  operationId: get-secured-tokens
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /api/v1/address/:address
   method: get
   operationId: find-address-by-id
@@ -378,18 +469,12 @@ operations:
   method: post
   operationId: search-operations
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/v1/operations/{chain_id}/{emitter}/{seq}
   method: get
   operationId: get-operation-by-id
@@ -646,16 +731,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/v1/wormhole/assets/secured-tokens
-  method: get
-  operationId: get-secured-tokens
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /api/v1/x-chain-activity
   method: get
   operationId: x-chain-activity
@@ -679,86 +754,6 @@ operations:
 - path: /swagger.json
   method: get
   operationId: swagger
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v1/governor/available_notional_by_chain
-  method: get
-  operationId: governor-available-notional-by-chain
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v1/governor/enqueued_vaas
-  method: get
-  operationId: guardians-enqueued-vaas
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v1/governor/is_vaa_enqueued/:chain_id/:emitter/:seq
-  method: get
-  operationId: guardians-is-vaa-enqueued
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v1/governor/token_list
-  method: get
-  operationId: guardians-token-list
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v1/guardianset/current
-  method: get
-  operationId: guardian-set
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v1/heartbeats
-  method: get
-  operationId: guardians-hearbeats
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v1/signed_batch_vaa/:chain_id/:emitter/sequence/:seq
-  method: get
-  operationId: guardians-find-signed-batch-vaa
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v1/signed_vaa/:chain_id/:emitter/:seq
-  method: get
-  operationId: guardians-find-signed-vaa
   x-agentic-access:
     action-class: connected
     consequence: read
