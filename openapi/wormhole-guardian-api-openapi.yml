@@ -267,24 +267,33 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    governor.AvailableNotionalItemResponse:
+    heartbeats.HeartbeatNetworkResponse:
       type: object
       properties:
-        bigTransactionSize:
+        contractAddress:
           type: string
-        chainId:
-          $ref: '#/components/schemas/vaa.ChainID'
-        notionalLimit:
+        errorCount:
           type: string
-        remainingAvailableNotional:
+        height:
           type: string
-    governor.EnqueuedVaaResponse:
+        id:
+          type: integer
+    heartbeats.HeartbeatsResponse:
       type: object
       properties:
         entries:
           type: array
           items:
-            $ref: '#/components/schemas/governor.EnqueuedVaaItemResponse'
+            $ref: '#/components/schemas/heartbeats.HeartbeatResponse'
+    heartbeats.HeartbeatResponse:
+      type: object
+      properties:
+        p2pNodeAddr:
+          type: string
+        rawHeartbeat:
+          $ref: '#/components/schemas/heartbeats.RawHeartbeat'
+        verifiedGuardianAddr:
+          type: string
     vaa.ChainID:
       type: integer
       enum:
@@ -449,6 +458,60 @@ components:
       - ChainIDPolygonSepolia
       - ChainIDMonadTestnet
       - ChainIDHyperCore
+    guardian.GuardianSetResponse:
+      type: object
+      properties:
+        guardianSet:
+          $ref: '#/components/schemas/github_com_wormhole-foundation_wormhole-explorer_api_routes_guardian_guardian.GuardianSet'
+    github_com_wormhole-foundation_wormhole-explorer_api_routes_guardian_guardian.GuardianSet:
+      type: object
+      properties:
+        addresses:
+          type: array
+          items:
+            type: string
+        index:
+          type: integer
+    governor.AvailableNotionalItemResponse:
+      type: object
+      properties:
+        bigTransactionSize:
+          type: string
+        chainId:
+          $ref: '#/components/schemas/vaa.ChainID'
+        notionalLimit:
+          type: string
+        remainingAvailableNotional:
+          type: string
+    governor.EnqueuedVaaItemResponse:
+      type: object
+      properties:
+        emitterAddress:
+          type: string
+        emitterChain:
+          $ref: '#/components/schemas/vaa.ChainID'
+        notionalValue:
+          type: string
+        releaseTime:
+          type: integer
+        sequence:
+          type: integer
+        txHash:
+          type: string
+    governor.EnqueuedVaaResponse:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.EnqueuedVaaItemResponse'
+    governor.AvailableNotionalResponse:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/governor.AvailableNotionalItemResponse'
     heartbeats.RawHeartbeat:
       type: object
       properties:
@@ -472,22 +535,6 @@ components:
           type: string
         version:
           type: string
-    github_com_wormhole-foundation_wormhole-explorer_api_routes_guardian_guardian.GuardianSet:
-      type: object
-      properties:
-        addresses:
-          type: array
-          items:
-            type: string
-        index:
-          type: integer
-    governor.AvailableNotionalResponse:
-      type: object
-      properties:
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/governor.AvailableNotionalItemResponse'
     governor.TokenList:
       type: object
       properties:
@@ -497,50 +544,3 @@ components:
           $ref: '#/components/schemas/vaa.ChainID'
         price:
           type: number
-    heartbeats.HeartbeatResponse:
-      type: object
-      properties:
-        p2pNodeAddr:
-          type: string
-        rawHeartbeat:
-          $ref: '#/components/schemas/heartbeats.RawHeartbeat'
-        verifiedGuardianAddr:
-          type: string
-    governor.EnqueuedVaaItemResponse:
-      type: object
-      properties:
-        emitterAddress:
-          type: string
-        emitterChain:
-          $ref: '#/components/schemas/vaa.ChainID'
-        notionalValue:
-          type: string
-        releaseTime:
-          type: integer
-        sequence:
-          type: integer
-        txHash:
-          type: string
-    guardian.GuardianSetResponse:
-      type: object
-      properties:
-        guardianSet:
-          $ref: '#/components/schemas/github_com_wormhole-foundation_wormhole-explorer_api_routes_guardian_guardian.GuardianSet'
-    heartbeats.HeartbeatsResponse:
-      type: object
-      properties:
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/heartbeats.HeartbeatResponse'
-    heartbeats.HeartbeatNetworkResponse:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        errorCount:
-          type: string
-        height:
-          type: string
-        id:
-          type: integer
