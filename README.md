@@ -64,34 +64,193 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Wormhole is a decentralized cross-chain messaging and interoperability protocol connecting 45+ blockchain networks including Solana, Ethereum, Arbitrum, Base, Avalanche, BNB Chain, Aptos, Sui, and more. It provides the infrastructure for moving assets and data across chains securely via a Guardian Network of validators who sign Verifiable Action Approvals (VAAs).
+Wormhole is a decentralized cross-chain messaging and interoperability protocol connecting 45+ blockchain networks. It provides REST APIs for querying VAA (Verifiable Action Approval) status, native and wrapped token transfers, cross-chain operations, and Guardian Network data via the Wormholescan API. Developers can build multichain applications with the TypeScript SDK, CLI tooling, and the Connect bridging widget.
 
-## APIs
+**Areas:** Cross-Chain · Blockchain · Interoperability · DeFi · Token Transfers · Messaging · Web3
 
-This repository catalogs the following Wormhole public APIs and developer tools:
+## Wormhole on APIs.io
 
-- **Wormholescan API (Mainnet)** — `https://api.wormholescan.io/api/v1` — REST API for VAA status, token transfers, NTT metadata, cross-chain operations, and Guardian Network data
-- **Wormholescan API (Testnet)** — `https://api.testnet.wormholescan.io/api/v1` — Testnet mirror for development
-- **TypeScript SDK** — `@wormhole-foundation/sdk` — Unified SDK for cross-chain app development
-- **Connect Widget** — `@wormhole-foundation/wormhole-connect` — Embeddable React bridge widget
-- **Wormhole CLI** — Command-line tooling for protocol operations
+Everything profiled for Wormhole is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/wormhole/](https://apis.io/providers/wormhole/)** — or go straight to one of the APIs or properties below.
 
-## Key Capabilities
+### APIs (7)
 
-- Query VAA (Verifiable Action Approval) status and details
-- Fetch native and wrapped token transfer operations with filtering
-- Retrieve NTT token metadata across 45+ chains
-- Access Guardian Network configuration and status
-- Build cross-chain applications with TypeScript SDK
-- Embed bridge UI with the Connect widget
+- [Wormholescan Testnet API](https://apis.io/apis/wormhole/wormholescan-testnet-api/) — Testnet version of the Wormholescan REST API for development and testing against Wormhole-supported test networks. Mirrors the mainnet API surface for VAAs,…
+- [Wormhole TypeScript SDK](https://apis.io/apis/wormhole/wormhole-typescript-sdk/) — Unified TypeScript SDK for building cross-chain applications on Wormhole. Supports Native Token Transfers, Wrapped Token Transfers, CCTP, Settlement, and…
+- [Wormhole Connect Widget](https://apis.io/apis/wormhole/wormhole-connect-widget/) — Embeddable React widget that provides a full cross-chain token transfer UI powered by Wormhole. Supports 45+ chains and integrates Native Token Transfers,…
+- [Wormhole CLI](https://apis.io/apis/wormhole/wormhole-cli/) — Command-line interface for interacting with Wormhole protocol operations including token transfers, NTT deployments, and cross-chain messaging tasks.
+- [Wormhole Guardian API](https://apis.io/apis/wormhole/wormhole-guardian-api/) — The Guardian API from Wormhole — 8 operation(s) for guardian.
+- [Wormhole API](https://apis.io/apis/wormhole/wormhole-wormhole-api/) — The wormhole API from Wormhole — 1 operation(s) for wormhole.
+- [Wormhole Wormholescan API](https://apis.io/apis/wormhole/wormhole-wormholescan-api/) — The wormholescan API from Wormhole — 64 operation(s) for wormholescan.
 
-## Resources
+### Published properties
 
-- Developer Documentation: https://wormhole.com/docs/
-- Wormholescan Explorer: https://wormholescan.io/
-- GitHub Organization: https://github.com/wormhole-foundation
-- Community Hub: https://wormhole.com/community/hub
-- Forum: https://forum.wormhole.com/
-- Bug Bounty: https://immunefi.com/bug-bounty/wormhole/
-- Contact: https://wormhole.com/contact
-- Institutions: https://wormhole.com/institutions
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Wormhole Agentic Access](https://apis.io/agentic-access/wormhole/wormhole-agentic-access/)
+
+#### JSON Schema (113)
+
+The data models the API reads and writes.
+
+- [address.AddressOverview](https://apis.io/schemas/wormhole/address-addressoverview/)
+- [github_com_wormhole-foundation_wormhole-explorer_api_routes_wormscan_operations.BalanceChanges](https://apis.io/schemas/wormhole/balancechanges/)
+- [delegate_observations.DelegateObservationDoc](https://apis.io/schemas/wormhole/delegate-observations-delegateobservationdoc/)
+- [governor.AvailableNotionalItemResponse](https://apis.io/schemas/wormhole/governor-availablenotionalitemresponse/)
+- [governor.AvailableNotionalResponse](https://apis.io/schemas/wormhole/governor-availablenotionalresponse/)
+- [governor.Emitter](https://apis.io/schemas/wormhole/governor-emitter/)
+- [governor.EnqueuedVaa](https://apis.io/schemas/wormhole/governor-enqueuedvaa/)
+- [governor.EnqueuedVaaDetail](https://apis.io/schemas/wormhole/governor-enqueuedvaadetail/)
+- [governor.EnqueuedVaaItemResponse](https://apis.io/schemas/wormhole/governor-enqueuedvaaitemresponse/)
+- [governor.EnqueuedVaaResponse](https://apis.io/schemas/wormhole/governor-enqueuedvaaresponse/)
+- [governor.EnqueuedVaas](https://apis.io/schemas/wormhole/governor-enqueuedvaas/)
+- [governor.GovConfig](https://apis.io/schemas/wormhole/governor-govconfig/)
+- [governor.GovConfigChains](https://apis.io/schemas/wormhole/governor-govconfigchains/)
+- [governor.GovConfigfTokens](https://apis.io/schemas/wormhole/governor-govconfigftokens/)
+- [governor.GovernorLimit](https://apis.io/schemas/wormhole/governor-governorlimit/)
+- [governor.GovernorVaasResponse](https://apis.io/schemas/wormhole/governor-governorvaasresponse/)
+- [governor.GovStatus](https://apis.io/schemas/wormhole/governor-govstatus/)
+- [governor.GovStatusChainEmitter](https://apis.io/schemas/wormhole/governor-govstatuschainemitter/)
+- [governor.GovStatusChains](https://apis.io/schemas/wormhole/governor-govstatuschains/)
+- [governor.MaxNotionalAvailableRecord](https://apis.io/schemas/wormhole/governor-maxnotionalavailablerecord/)
+- [governor.NotionalAvailable](https://apis.io/schemas/wormhole/governor-notionalavailable/)
+- [governor.NotionalAvailableDetail](https://apis.io/schemas/wormhole/governor-notionalavailabledetail/)
+- [governor.NotionalLimitDetail](https://apis.io/schemas/wormhole/governor-notionallimitdetail/)
+- [governor.TokenList](https://apis.io/schemas/wormhole/governor-tokenlist/)
+- [guardian.GuardianSetResponse](https://apis.io/schemas/wormhole/guardian-guardiansetresponse/)
+- …and 88 more published on APIs.io
+
+#### Examples (74)
+
+Example requests and responses.
+
+- [Api V1 Native Token Transfer Activity](https://apis.io/examples/wormhole/api-v1-native-token-transfer-activity/)
+- [Api V1 Native Token Transfer Summary](https://apis.io/examples/wormhole/api-v1-native-token-transfer-summary/)
+- [Api V1 Native Token Transfer Token List](https://apis.io/examples/wormhole/api-v1-native-token-transfer-token-list/)
+- [Api V1 Native Token Transfer Top Address](https://apis.io/examples/wormhole/api-v1-native-token-transfer-top-address/)
+- [Api V1 Native Token Transfer Top Holder](https://apis.io/examples/wormhole/api-v1-native-token-transfer-top-holder/)
+- [Api V1 Native Token Transfer Transfer By Time](https://apis.io/examples/wormhole/api-v1-native-token-transfer-transfer-by-time/)
+- [Api V1 Top 100 Corridors](https://apis.io/examples/wormhole/api-v1-top-100-corridors/)
+- [Application Activity](https://apis.io/examples/wormhole/application-activity/)
+- [Circulating Supply](https://apis.io/examples/wormhole/circulating-supply/)
+- [Find Address By Id](https://apis.io/examples/wormhole/find-address-by-id/)
+- [Find All Vaas](https://apis.io/examples/wormhole/find-all-vaas/)
+- [Find Delegate Observations By Chain](https://apis.io/examples/wormhole/find-delegate-observations-by-chain/)
+- [Find Delegate Observations By Emitter](https://apis.io/examples/wormhole/find-delegate-observations-by-emitter/)
+- [Find Delegate Observations By Guardian](https://apis.io/examples/wormhole/find-delegate-observations-by-guardian/)
+- [Find Delegate Observations By Sequence](https://apis.io/examples/wormhole/find-delegate-observations-by-sequence/)
+- [Find Duplicated Vaa By Id](https://apis.io/examples/wormhole/find-duplicated-vaa-by-id/)
+- [Find Global Transaction By Id](https://apis.io/examples/wormhole/find-global-transaction-by-id/)
+- [Find Observations](https://apis.io/examples/wormhole/find-observations/)
+- [Find Observations By Chain](https://apis.io/examples/wormhole/find-observations-by-chain/)
+- [Find Observations By Emitter](https://apis.io/examples/wormhole/find-observations-by-emitter/)
+- [Find Observations By Id](https://apis.io/examples/wormhole/find-observations-by-id/)
+- [Find Observations By Sequence](https://apis.io/examples/wormhole/find-observations-by-sequence/)
+- [Find Relay By Vaa Id](https://apis.io/examples/wormhole/find-relay-by-vaa-id/)
+- [Find Vaa By Id](https://apis.io/examples/wormhole/find-vaa-by-id/)
+- [Find Vaas By Chain](https://apis.io/examples/wormhole/find-vaas-by-chain/)
+- …and 49 more published on APIs.io
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [Wormholescan Guardian API](https://apis.io/collections/wormhole/open-wormhole-guardian-api/)
+- [Wormholescan Guardian wormhole API](https://apis.io/collections/wormhole/open-wormhole-wormhole-api/)
+- [Guardian wormholescan API](https://apis.io/collections/wormhole/open-wormhole-wormholescan-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Wormhole — jsonschema rules](https://apis.io/rules/wormhole/wormhole-jsonschema-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Wormhole Domain Security](https://apis.io/security/wormhole/wormhole-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Plans](https://apis.io/plans/wormhole/plans/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Rate Limits](https://apis.io/rate-limits/wormhole/rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Finops](https://apis.io/finops/wormhole/finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://wormhole.com)
+- [Blog](https://wormhole.com/blog/)
+- [Security](https://immunefi.com/bug-bounty/wormhole/)
+- [Terms of service](https://wormhole.com/terms)
+- [Privacy policy](https://wormhole.com/privacy)
+
+## API Evangelist rating
+
+**Kin Score 24.7** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 44.5 |
+| Contract governance | 9.8 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 5.3 |
+
+**Agent readiness 21.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/wormhole/](https://apis.io/providers/wormhole/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Wormhole: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/wormhole/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
